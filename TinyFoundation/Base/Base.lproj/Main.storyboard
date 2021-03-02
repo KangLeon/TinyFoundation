@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0ZM-ho-SF9">
     <device id="mac" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,23 +8,115 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--基金行情-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TinyFoundation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2y-eD-JLJ">
+                                <rect key="frame" x="335" y="290" width="131" height="21"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="添加自选基金" image="plus.circle" catalog="system">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ePg-j6-ehX" kind="show" id="dDe-Yu-kIt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有添加自选基金，请到基金市场添加基金" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G74-Iv-JDk">
+                                <rect key="frame" x="218" y="178" width="364" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="yDg-i1-hAW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="N2y-eD-JLJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pd5-mL-w6d"/>
+                            <constraint firstItem="G74-Iv-JDk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WDW-fJ-Dqj"/>
+                            <constraint firstItem="G74-Iv-JDk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="128" id="obU-ZB-j5x"/>
+                            <constraint firstItem="N2y-eD-JLJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yzL-GA-y0D"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="基金行情" id="XmW-Wc-lOT">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="4VD-Er-MVR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="T1l-e1-Lce">
+                                <rect key="frame" x="759" y="3" width="21" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" image="gearshape.fill" catalog="system"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addNewFundButton" destination="N2y-eD-JLJ" id="NjJ-MA-oG5"/>
+                        <outlet property="settingsButton" destination="T1l-e1-Lce" id="JbK-14-472"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-125" y="114"/>
+            <point key="canvasLocation" x="649.5" y="188"/>
+        </scene>
+        <!--基金市场-->
+        <scene sceneID="MPl-i2-d22">
+            <objects>
+                <viewController id="ePg-j6-ehX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xEx-4K-v2c">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6yE-UI-D2t">
+                                <rect key="frame" x="0.0" y="50" width="800" height="550"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="t7z-o1-pX3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6yE-UI-D2t" firstAttribute="top" secondItem="t7z-o1-pX3" secondAttribute="top" id="3BN-mC-rt0"/>
+                            <constraint firstItem="6yE-UI-D2t" firstAttribute="trailing" secondItem="t7z-o1-pX3" secondAttribute="trailing" id="DpZ-GO-bsG"/>
+                            <constraint firstItem="6yE-UI-D2t" firstAttribute="leading" secondItem="t7z-o1-pX3" secondAttribute="leading" id="cQe-Aa-JfC"/>
+                            <constraint firstItem="6yE-UI-D2t" firstAttribute="bottom" secondItem="t7z-o1-pX3" secondAttribute="bottom" id="lkY-GG-cx2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="基金市场" id="6IG-Fi-fEt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FGX-z3-nUi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1360.5" y="188"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EaN-sV-DVW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ZM-ho-SF9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YVs-Hp-NfC">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WIw-2w-Zog"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B6c-ni-32z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-109.5" y="188"/>
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
