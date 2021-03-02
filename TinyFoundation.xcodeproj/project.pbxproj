@@ -49,6 +49,7 @@
 		59A75FCA25EE31FD0045177C /* TinyFoundationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyFoundationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A75FCE25EE31FE0045177C /* TinyFoundationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyFoundationUITests.swift; sourceTree = "<group>"; };
 		59A75FD025EE31FE0045177C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59A75FDF25EE32860045177C /* TinyFoundation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TinyFoundation.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +100,9 @@
 		59A75FAB25EE31FC0045177C /* TinyFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				59A75FAC25EE31FC0045177C /* AppDelegate.swift */,
-				59A75FAE25EE31FC0045177C /* SceneDelegate.swift */,
-				59A75FB025EE31FC0045177C /* ViewController.swift */,
-				59A75FB225EE31FC0045177C /* Main.storyboard */,
-				59A75FB525EE31FD0045177C /* Assets.xcassets */,
-				59A75FB725EE31FD0045177C /* LaunchScreen.storyboard */,
-				59A75FBA25EE31FD0045177C /* Info.plist */,
+				59A75FDF25EE32860045177C /* TinyFoundation.entitlements */,
+				59A75FEA25EE35850045177C /* Tool */,
+				59A75FE925EE357C0045177C /* Base */,
 			);
 			path = TinyFoundation;
 			sourceTree = "<group>";
@@ -126,6 +123,27 @@
 				59A75FD025EE31FE0045177C /* Info.plist */,
 			);
 			path = TinyFoundationUITests;
+			sourceTree = "<group>";
+		};
+		59A75FE925EE357C0045177C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				59A75FAC25EE31FC0045177C /* AppDelegate.swift */,
+				59A75FAE25EE31FC0045177C /* SceneDelegate.swift */,
+				59A75FB025EE31FC0045177C /* ViewController.swift */,
+				59A75FB225EE31FC0045177C /* Main.storyboard */,
+				59A75FB525EE31FD0045177C /* Assets.xcassets */,
+				59A75FB725EE31FD0045177C /* LaunchScreen.storyboard */,
+				59A75FBA25EE31FD0045177C /* Info.plist */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		59A75FEA25EE35850045177C /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,6 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TinyFoundation/TinyFoundation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DR4WPFLXBN;
 				INFOPLIST_FILE = TinyFoundation/Info.plist;
@@ -443,10 +462,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiyoung.TinyFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -455,6 +476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TinyFoundation/TinyFoundation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DR4WPFLXBN;
 				INFOPLIST_FILE = TinyFoundation/Info.plist;
@@ -462,10 +484,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiyoung.TinyFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
