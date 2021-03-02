@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1030A461E5045F38A4D5A3D9 /* Pods_TinyFoundation_TinyFoundationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37EF23736A00C4C2168BC335 /* Pods_TinyFoundation_TinyFoundationUITests.framework */; };
 		59A75FAD25EE31FC0045177C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FAC25EE31FC0045177C /* AppDelegate.swift */; };
 		59A75FAF25EE31FC0045177C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FAE25EE31FC0045177C /* SceneDelegate.swift */; };
 		59A75FB125EE31FC0045177C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FB025EE31FC0045177C /* ViewController.swift */; };
@@ -15,6 +16,8 @@
 		59A75FB925EE31FD0045177C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A75FB725EE31FD0045177C /* LaunchScreen.storyboard */; };
 		59A75FC425EE31FD0045177C /* TinyFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FC325EE31FD0045177C /* TinyFoundationTests.swift */; };
 		59A75FCF25EE31FE0045177C /* TinyFoundationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FCE25EE31FE0045177C /* TinyFoundationUITests.swift */; };
+		AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81FA0A44A91C8863B5614B8 /* Pods_TinyFoundation.framework */; };
+		F74403AD2E9575E272D7FE82 /* Pods_TinyFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D232254A2D9245D9ADFDBAAC /* Pods_TinyFoundationTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DA866EE7A0862D2E6C6C02B /* Pods-TinyFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation.debug.xcconfig"; path = "Target Support Files/Pods-TinyFoundation/Pods-TinyFoundation.debug.xcconfig"; sourceTree = "<group>"; };
+		37EF23736A00C4C2168BC335 /* Pods_TinyFoundation_TinyFoundationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyFoundation_TinyFoundationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F7EE4ED79BE5591DEAEC55A /* Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig"; path = "Target Support Files/Pods-TinyFoundation-TinyFoundationUITests/Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig"; sourceTree = "<group>"; };
+		52BB1E063ADA7E2AE9F011ED /* Pods-TinyFoundationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundationTests.release.xcconfig"; path = "Target Support Files/Pods-TinyFoundationTests/Pods-TinyFoundationTests.release.xcconfig"; sourceTree = "<group>"; };
 		59A75FA925EE31FC0045177C /* TinyFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A75FAC25EE31FC0045177C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A75FAE25EE31FC0045177C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +57,11 @@
 		59A75FCE25EE31FE0045177C /* TinyFoundationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyFoundationUITests.swift; sourceTree = "<group>"; };
 		59A75FD025EE31FE0045177C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59A75FDF25EE32860045177C /* TinyFoundation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TinyFoundation.entitlements; sourceTree = "<group>"; };
+		696B5F35DA09A5FA40D18C76 /* Pods-TinyFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation.release.xcconfig"; path = "Target Support Files/Pods-TinyFoundation/Pods-TinyFoundation.release.xcconfig"; sourceTree = "<group>"; };
+		ACE4E10F9BF027E1BEC03E95 /* Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig"; path = "Target Support Files/Pods-TinyFoundation-TinyFoundationUITests/Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D232254A2D9245D9ADFDBAAC /* Pods_TinyFoundationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyFoundationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E063EBB095E782CA167F085D /* Pods-TinyFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundationTests.debug.xcconfig"; path = "Target Support Files/Pods-TinyFoundationTests/Pods-TinyFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F81FA0A44A91C8863B5614B8 /* Pods_TinyFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F74403AD2E9575E272D7FE82 /* Pods_TinyFoundationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,12 +85,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1030A461E5045F38A4D5A3D9 /* Pods_TinyFoundation_TinyFoundationUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		423429BEE2CB90E2507A403E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DA866EE7A0862D2E6C6C02B /* Pods-TinyFoundation.debug.xcconfig */,
+				696B5F35DA09A5FA40D18C76 /* Pods-TinyFoundation.release.xcconfig */,
+				ACE4E10F9BF027E1BEC03E95 /* Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig */,
+				3F7EE4ED79BE5591DEAEC55A /* Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig */,
+				E063EBB095E782CA167F085D /* Pods-TinyFoundationTests.debug.xcconfig */,
+				52BB1E063ADA7E2AE9F011ED /* Pods-TinyFoundationTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		59A75FA025EE31FC0045177C = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +112,8 @@
 				59A75FC225EE31FD0045177C /* TinyFoundationTests */,
 				59A75FCD25EE31FE0045177C /* TinyFoundationUITests */,
 				59A75FAA25EE31FC0045177C /* Products */,
+				423429BEE2CB90E2507A403E /* Pods */,
+				F51BC11F2137B161FB100D5B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +176,16 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		F51BC11F2137B161FB100D5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F81FA0A44A91C8863B5614B8 /* Pods_TinyFoundation.framework */,
+				37EF23736A00C4C2168BC335 /* Pods_TinyFoundation_TinyFoundationUITests.framework */,
+				D232254A2D9245D9ADFDBAAC /* Pods_TinyFoundationTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59A75FD325EE31FE0045177C /* Build configuration list for PBXNativeTarget "TinyFoundation" */;
 			buildPhases = (
+				B024DFF8277F348344F385D1 /* [CP] Check Pods Manifest.lock */,
 				59A75FA525EE31FC0045177C /* Sources */,
 				59A75FA625EE31FC0045177C /* Frameworks */,
 				59A75FA725EE31FC0045177C /* Resources */,
@@ -170,6 +211,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59A75FD625EE31FE0045177C /* Build configuration list for PBXNativeTarget "TinyFoundationTests" */;
 			buildPhases = (
+				DB238F6D0725853A52EACA33 /* [CP] Check Pods Manifest.lock */,
 				59A75FBB25EE31FD0045177C /* Sources */,
 				59A75FBC25EE31FD0045177C /* Frameworks */,
 				59A75FBD25EE31FD0045177C /* Resources */,
@@ -188,6 +230,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59A75FD925EE31FE0045177C /* Build configuration list for PBXNativeTarget "TinyFoundationUITests" */;
 			buildPhases = (
+				19832A7CD40147EFEE89D34A /* [CP] Check Pods Manifest.lock */,
 				59A75FC625EE31FD0045177C /* Sources */,
 				59A75FC725EE31FD0045177C /* Frameworks */,
 				59A75FC825EE31FD0045177C /* Resources */,
@@ -270,6 +313,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19832A7CD40147EFEE89D34A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinyFoundation-TinyFoundationUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B024DFF8277F348344F385D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinyFoundation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB238F6D0725853A52EACA33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinyFoundationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		59A75FA525EE31FC0045177C /* Sources */ = {
@@ -451,13 +563,14 @@
 		};
 		59A75FD425EE31FE0045177C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DA866EE7A0862D2E6C6C02B /* Pods-TinyFoundation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TinyFoundation/TinyFoundation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DR4WPFLXBN;
-				INFOPLIST_FILE = TinyFoundation/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TinyFoundation/Base/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,13 +586,14 @@
 		};
 		59A75FD525EE31FE0045177C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 696B5F35DA09A5FA40D18C76 /* Pods-TinyFoundation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TinyFoundation/TinyFoundation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DR4WPFLXBN;
-				INFOPLIST_FILE = TinyFoundation/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TinyFoundation/Base/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -495,6 +609,7 @@
 		};
 		59A75FD725EE31FE0045177C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E063EBB095E782CA167F085D /* Pods-TinyFoundationTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -517,6 +632,7 @@
 		};
 		59A75FD825EE31FE0045177C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52BB1E063ADA7E2AE9F011ED /* Pods-TinyFoundationTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -539,6 +655,7 @@
 		};
 		59A75FDA25EE31FE0045177C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACE4E10F9BF027E1BEC03E95 /* Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -559,6 +676,7 @@
 		};
 		59A75FDB25EE31FE0045177C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F7EE4ED79BE5591DEAEC55A /* Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

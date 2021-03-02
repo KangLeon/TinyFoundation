@@ -1,0 +1,6 @@
+framework module Pods_TinyFoundationTests {
+  umbrella header "Pods-TinyFoundationTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
