@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		59A75FB925EE31FD0045177C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A75FB725EE31FD0045177C /* LaunchScreen.storyboard */; };
 		59A75FC425EE31FD0045177C /* TinyFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FC325EE31FD0045177C /* TinyFoundationTests.swift */; };
 		59A75FCF25EE31FE0045177C /* TinyFoundationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FCE25EE31FE0045177C /* TinyFoundationUITests.swift */; };
+		59D3B14925F1EFA70073E289 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 59D3B14825F1EFA70073E289 /* Alamofire */; };
+		59D3B14F25F1FF250073E289 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3B14E25F1FF250073E289 /* AlamofireManager.swift */; };
 		AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81FA0A44A91C8863B5614B8 /* Pods_TinyFoundation.framework */; };
 		F74403AD2E9575E272D7FE82 /* Pods_TinyFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D232254A2D9245D9ADFDBAAC /* Pods_TinyFoundationTests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,7 @@
 		59A75FCE25EE31FE0045177C /* TinyFoundationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyFoundationUITests.swift; sourceTree = "<group>"; };
 		59A75FD025EE31FE0045177C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59A75FDF25EE32860045177C /* TinyFoundation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TinyFoundation.entitlements; sourceTree = "<group>"; };
+		59D3B14E25F1FF250073E289 /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		696B5F35DA09A5FA40D18C76 /* Pods-TinyFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation.release.xcconfig"; path = "Target Support Files/Pods-TinyFoundation/Pods-TinyFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		ACE4E10F9BF027E1BEC03E95 /* Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig"; path = "Target Support Files/Pods-TinyFoundation-TinyFoundationUITests/Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D232254A2D9245D9ADFDBAAC /* Pods_TinyFoundationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyFoundationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */,
+				59D3B14925F1EFA70073E289 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,8 +176,17 @@
 		59A75FEA25EE35850045177C /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				59D3B14D25F1FF090073E289 /* AlamofireManager */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		59D3B14D25F1FF090073E289 /* AlamofireManager */ = {
+			isa = PBXGroup;
+			children = (
+				59D3B14E25F1FF250073E289 /* AlamofireManager.swift */,
+			);
+			path = AlamofireManager;
 			sourceTree = "<group>";
 		};
 		F51BC11F2137B161FB100D5B /* Frameworks */ = {
@@ -203,6 +216,9 @@
 			dependencies = (
 			);
 			name = TinyFoundation;
+			packageProductDependencies = (
+				59D3B14825F1EFA70073E289 /* Alamofire */,
+			);
 			productName = TinyFoundation;
 			productReference = 59A75FA925EE31FC0045177C /* TinyFoundation.app */;
 			productType = "com.apple.product-type.application";
@@ -276,6 +292,9 @@
 				Base,
 			);
 			mainGroup = 59A75FA025EE31FC0045177C;
+			packageReferences = (
+				59D3B14725F1EFA70073E289 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 59A75FAA25EE31FC0045177C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -388,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59D3B14F25F1FF250073E289 /* AlamofireManager.swift in Sources */,
 				59A75FB125EE31FC0045177C /* ViewController.swift in Sources */,
 				59A75FAD25EE31FC0045177C /* AppDelegate.swift in Sources */,
 				59A75FAF25EE31FC0045177C /* SceneDelegate.swift in Sources */,
@@ -735,6 +755,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		59D3B14725F1EFA70073E289 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		59D3B14825F1EFA70073E289 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59D3B14725F1EFA70073E289 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 59A75FA125EE31FC0045177C /* Project object */;
 }
