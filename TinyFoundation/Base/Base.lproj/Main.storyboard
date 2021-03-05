@@ -67,7 +67,7 @@
         <!--基金市场-->
         <scene sceneID="MPl-i2-d22">
             <objects>
-                <viewController id="ePg-j6-ehX" customClass="FundListViewController" sceneMemberID="viewController">
+                <viewController id="ePg-j6-ehX" customClass="FundListViewController" customModule="TinyFoundation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xEx-4K-v2c">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,6 +75,15 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6yE-UI-D2t">
                                 <rect key="frame" x="0.0" y="50" width="800" height="550"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dmd-ir-CXQ">
+                                <rect key="frame" x="10" y="60" width="800" height="550"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ePg-j6-ehX" id="SGS-uU-oUq"/>
+                                    <outlet property="delegate" destination="ePg-j6-ehX" id="Tmu-Au-pIQ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t7z-o1-pX3"/>
@@ -88,7 +97,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="基金市场" id="6IG-Fi-fEt"/>
                     <connections>
-                        <outlet property="asd" destination="6yE-UI-D2t" id="9FF-Q1-e1K"/>
+                        <outlet property="fundList" destination="dmd-ir-CXQ" id="duq-mQ-i3F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGX-z3-nUi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

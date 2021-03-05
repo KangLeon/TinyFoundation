@@ -8,19 +8,13 @@
 import Foundation
 import UIKit
 
-class FundListViewController: NSObject {
+class FundListViewController: UIViewController {
     
     @IBOutlet weak var fundList: UITableView!
     
     let cell_reuse = "fund_list_reuse_cell"
     
     var dataArray: Array? = Array<Any>()
-    
-    override init() {
-        super.init()
-        fundList.register(UINib.init(nibName: "FundAllCell", bundle: nil), forCellReuseIdentifier: cell_reuse)
-        requestGetData()
-    }
     
     func requestGetData() {
         
@@ -39,9 +33,8 @@ extension FundListViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse, for: indexPath)
+        var cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse)
         
-        
-        return cell
+        return cell!
     }
 }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-class FundAllModel: <#super class#> {
-    <#code#>
+class FundAllModel: NSObject {
+    
 }

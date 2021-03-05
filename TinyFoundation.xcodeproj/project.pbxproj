@@ -28,6 +28,7 @@
 		59E378F925F21F0600B8B7EB /* FundAllCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E378F825F21F0600B8B7EB /* FundAllCell.xib */; };
 		59E378FE25F21FC400B8B7EB /* FundAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E378FD25F21FC400B8B7EB /* FundAllCell.swift */; };
 		59E3790625F220FC00B8B7EB /* FundAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3790525F220FC00B8B7EB /* FundAllModel.swift */; };
+		59E3790F25F2217800B8B7EB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 59E3790E25F2217800B8B7EB /* SwiftyJSON */; };
 		AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81FA0A44A91C8863B5614B8 /* Pods_TinyFoundation.framework */; };
 		F74403AD2E9575E272D7FE82 /* Pods_TinyFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D232254A2D9245D9ADFDBAAC /* Pods_TinyFoundationTests.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59E3790F25F2217800B8B7EB /* SwiftyJSON in Frameworks */,
 				AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */,
 				59D3B14925F1EFA70073E289 /* Alamofire in Frameworks */,
 			);
@@ -296,6 +298,7 @@
 			name = TinyFoundation;
 			packageProductDependencies = (
 				59D3B14825F1EFA70073E289 /* Alamofire */,
+				59E3790E25F2217800B8B7EB /* SwiftyJSON */,
 			);
 			productName = TinyFoundation;
 			productReference = 59A75FA925EE31FC0045177C /* TinyFoundation.app */;
@@ -372,6 +375,7 @@
 			mainGroup = 59A75FA025EE31FC0045177C;
 			packageReferences = (
 				59D3B14725F1EFA70073E289 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				59E3790D25F2217800B8B7EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 59A75FAA25EE31FC0045177C /* Products */;
 			projectDirPath = "";
@@ -853,6 +857,14 @@
 				minimumVersion = 5.4.1;
 			};
 		};
+		59E3790D25F2217800B8B7EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -860,6 +872,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59D3B14725F1EFA70073E289 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		59E3790E25F2217800B8B7EB /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59E3790D25F2217800B8B7EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
