@@ -25,6 +25,9 @@
 		59D3B16525F20D930073E289 /* HWNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3B16025F20D930073E289 /* HWNetworking.swift */; };
 		59E378E725F211DB00B8B7EB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E378E625F211DB00B8B7EB /* Constant.swift */; };
 		59E378F125F2156300B8B7EB /* FundListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E378F025F2156300B8B7EB /* FundListViewController.swift */; };
+		59E378F925F21F0600B8B7EB /* FundAllCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E378F825F21F0600B8B7EB /* FundAllCell.xib */; };
+		59E378FE25F21FC400B8B7EB /* FundAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E378FD25F21FC400B8B7EB /* FundAllCell.swift */; };
+		59E3790625F220FC00B8B7EB /* FundAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3790525F220FC00B8B7EB /* FundAllModel.swift */; };
 		AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81FA0A44A91C8863B5614B8 /* Pods_TinyFoundation.framework */; };
 		F74403AD2E9575E272D7FE82 /* Pods_TinyFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D232254A2D9245D9ADFDBAAC /* Pods_TinyFoundationTests.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +77,9 @@
 		59D3B16025F20D930073E289 /* HWNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNetworking.swift; sourceTree = "<group>"; };
 		59E378E625F211DB00B8B7EB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		59E378F025F2156300B8B7EB /* FundListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundListViewController.swift; sourceTree = "<group>"; };
+		59E378F825F21F0600B8B7EB /* FundAllCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FundAllCell.xib; sourceTree = "<group>"; };
+		59E378FD25F21FC400B8B7EB /* FundAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundAllCell.swift; sourceTree = "<group>"; };
+		59E3790525F220FC00B8B7EB /* FundAllModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundAllModel.swift; sourceTree = "<group>"; };
 		696B5F35DA09A5FA40D18C76 /* Pods-TinyFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation.release.xcconfig"; path = "Target Support Files/Pods-TinyFoundation/Pods-TinyFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		ACE4E10F9BF027E1BEC03E95 /* Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig"; path = "Target Support Files/Pods-TinyFoundation-TinyFoundationUITests/Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D232254A2D9245D9ADFDBAAC /* Pods_TinyFoundationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyFoundationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,9 +235,36 @@
 		59E378EF25F2154900B8B7EB /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				59E378F025F2156300B8B7EB /* FundListViewController.swift */,
+				59E3790225F220D900B8B7EB /* model */,
+				59E3790425F220E400B8B7EB /* View */,
+				59E3790325F220DD00B8B7EB /* VC */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		59E3790225F220D900B8B7EB /* model */ = {
+			isa = PBXGroup;
+			children = (
+				59E3790525F220FC00B8B7EB /* FundAllModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		59E3790325F220DD00B8B7EB /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				59E378F025F2156300B8B7EB /* FundListViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		59E3790425F220E400B8B7EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				59E378F825F21F0600B8B7EB /* FundAllCell.xib */,
+				59E378FD25F21FC400B8B7EB /* FundAllCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F51BC11F2137B161FB100D5B /* Frameworks */ = {
@@ -358,6 +391,7 @@
 			files = (
 				59A75FB925EE31FD0045177C /* LaunchScreen.storyboard in Resources */,
 				59A75FB625EE31FD0045177C /* Assets.xcassets in Resources */,
+				59E378F925F21F0600B8B7EB /* FundAllCell.xib in Resources */,
 				59A75FB425EE31FC0045177C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,11 +491,13 @@
 				59D3B16525F20D930073E289 /* HWNetworking.swift in Sources */,
 				59D3B16325F20D930073E289 /* HWMultipartData.swift in Sources */,
 				59E378F125F2156300B8B7EB /* FundListViewController.swift in Sources */,
+				59E3790625F220FC00B8B7EB /* FundAllModel.swift in Sources */,
 				59D3B16425F20D930073E289 /* HWNetworkingError.swift in Sources */,
 				59A75FB125EE31FC0045177C /* ViewController.swift in Sources */,
 				59A75FAD25EE31FC0045177C /* AppDelegate.swift in Sources */,
 				59E378E725F211DB00B8B7EB /* Constant.swift in Sources */,
 				59A75FAF25EE31FC0045177C /* SceneDelegate.swift in Sources */,
+				59E378FE25F21FC400B8B7EB /* FundAllCell.swift in Sources */,
 				59D3B16225F20D930073E289 /* HWAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
