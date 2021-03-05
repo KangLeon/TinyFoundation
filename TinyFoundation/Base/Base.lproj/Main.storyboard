@@ -67,7 +67,7 @@
         <!--基金市场-->
         <scene sceneID="MPl-i2-d22">
             <objects>
-                <viewController id="ePg-j6-ehX" sceneMemberID="viewController">
+                <viewController id="ePg-j6-ehX" customClass="FundListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xEx-4K-v2c">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,6 +87,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="基金市场" id="6IG-Fi-fEt"/>
+                    <connections>
+                        <outlet property="asd" destination="6yE-UI-D2t" id="9FF-Q1-e1K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGX-z3-nUi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

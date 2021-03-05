@@ -16,6 +16,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    func test_post_a() {
+//        let p: [String: Any] = ["city": "北京市", "locatex": 0, "locatey": 0, "num": 2]
+//        HN.POST(url: API.Home.storeList.url, parameters: p).success { response in
+//            print("response -->", response)
+//        }.failed { error in
+//            print("error -->", error)
+//        }
+    }
 }
 
