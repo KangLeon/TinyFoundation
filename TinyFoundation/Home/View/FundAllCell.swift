@@ -10,15 +10,13 @@ import UIKit
 
 class FundAllCell: UITableViewCell {
     
-    @IBOutlet weak var name: UIView!
+    @IBOutlet weak var name: UILabel!
     
-    override func awakeFromNib() {
-            super.awakeFromNib()
-            // Initialization code
-        }
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
     func configData() {
          
     }
-    
 }
