@@ -14,7 +14,7 @@ class FundListViewController: UIViewController {
     
     let cell_reuse = "fund_list_reuse_cell"
     
-    var dataArray: Array? = Array<Any>()
+    var dataArray: Array<FundAllModel>? = Array<FundAllModel>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +24,17 @@ class FundListViewController: UIViewController {
     }
     
     func requestGetData() {
-        HN.POST(url: HOST+fund_list_url, parameters: [:]).success { response in
+        HN.GET(url: HOST+fund_list_url).success { response in
             print("response -->", response)
+            
+            let dict = response as? Dictionary<String,Any>
+            
+            if dict != nil && ((dict?.keys.contains("data")) != nil){
+                let array = dict!["data"] as? Array<Any>
+                
+                print(array)
+            }
+            
         }.failed { error in
             print("error -->", error)
         }
@@ -39,13 +48,13 @@ extension FundListViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        return dataArray?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse, for: indexPath) as! FundAllCell
         
-        cell.name.text = "你好"
+        cell.configData(model: dataArray?[indexPath.row])
         
         return cell
     }

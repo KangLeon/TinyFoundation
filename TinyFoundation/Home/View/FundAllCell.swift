@@ -11,12 +11,16 @@ import UIKit
 class FundAllCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var number: UILabel!
+    @IBOutlet weak var type: UILabel!
     
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func configData() {
-         
+    func configData(model: FundAllModel!) {
+        name.text = model.fundName
+        number.text = model.fundNumber
+        type.text = model.fundType
     }
 }

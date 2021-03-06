@@ -8,5 +8,9 @@
 import Foundation
 
 class FundAllModel: NSObject {
-    
+    var fundAbbreviation :String?
+    var fundName :String?
+    var fundNumber :String?
+    var fundPinyin :String?
+    var fundType :String?
 }
