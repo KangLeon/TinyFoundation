@@ -72,35 +72,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6yE-UI-D2t">
-                                <rect key="frame" x="0.0" y="50" width="800" height="550"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dmd-ir-CXQ">
-                                <rect key="frame" x="10" y="60" width="800" height="550"/>
+                                <rect key="frame" x="0.0" y="94" width="800" height="506"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ePg-j6-ehX" id="SGS-uU-oUq"/>
                                     <outlet property="delegate" destination="ePg-j6-ehX" id="Tmu-Au-pIQ"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="e9C-de-VwD">
+                                <rect key="frame" x="0.0" y="50" width="800" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ePg-j6-ehX" id="kG1-ZU-RX5"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t7z-o1-pX3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6yE-UI-D2t" firstAttribute="top" secondItem="t7z-o1-pX3" secondAttribute="top" id="3BN-mC-rt0"/>
-                            <constraint firstAttribute="bottom" secondItem="dmd-ir-CXQ" secondAttribute="bottom" constant="-10" id="5aK-Uz-pMw"/>
-                            <constraint firstItem="6yE-UI-D2t" firstAttribute="trailing" secondItem="t7z-o1-pX3" secondAttribute="trailing" id="DpZ-GO-bsG"/>
-                            <constraint firstItem="6yE-UI-D2t" firstAttribute="leading" secondItem="t7z-o1-pX3" secondAttribute="leading" id="cQe-Aa-JfC"/>
-                            <constraint firstItem="dmd-ir-CXQ" firstAttribute="top" secondItem="t7z-o1-pX3" secondAttribute="top" constant="10" id="ccN-Z6-eIa"/>
-                            <constraint firstAttribute="trailing" secondItem="dmd-ir-CXQ" secondAttribute="trailing" constant="-10" id="fSE-4J-4rZ"/>
-                            <constraint firstItem="6yE-UI-D2t" firstAttribute="bottom" secondItem="t7z-o1-pX3" secondAttribute="bottom" id="lkY-GG-cx2"/>
-                            <constraint firstItem="dmd-ir-CXQ" firstAttribute="leading" secondItem="t7z-o1-pX3" secondAttribute="leading" constant="10" id="rNQ-nS-Vsp"/>
+                            <constraint firstItem="dmd-ir-CXQ" firstAttribute="leading" secondItem="t7z-o1-pX3" secondAttribute="leading" id="1No-Az-KDU"/>
+                            <constraint firstItem="dmd-ir-CXQ" firstAttribute="bottom" secondItem="t7z-o1-pX3" secondAttribute="bottom" id="2xZ-2D-cZG"/>
+                            <constraint firstItem="e9C-de-VwD" firstAttribute="trailing" secondItem="t7z-o1-pX3" secondAttribute="trailing" id="5Gu-LC-n4P"/>
+                            <constraint firstItem="dmd-ir-CXQ" firstAttribute="top" secondItem="e9C-de-VwD" secondAttribute="bottom" id="Dtq-ZW-g4m"/>
+                            <constraint firstItem="e9C-de-VwD" firstAttribute="top" secondItem="t7z-o1-pX3" secondAttribute="top" id="F9n-tw-KGi"/>
+                            <constraint firstItem="dmd-ir-CXQ" firstAttribute="trailing" secondItem="t7z-o1-pX3" secondAttribute="trailing" id="dPC-WE-NAy"/>
+                            <constraint firstItem="e9C-de-VwD" firstAttribute="leading" secondItem="t7z-o1-pX3" secondAttribute="leading" id="jRe-9p-3Sf"/>
+                            <constraint firstItem="dmd-ir-CXQ" firstAttribute="top" secondItem="t7z-o1-pX3" secondAttribute="top" constant="44" id="z7J-sK-Xm3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="基金市场" id="6IG-Fi-fEt"/>
                     <connections>
                         <outlet property="fundList" destination="dmd-ir-CXQ" id="duq-mQ-i3F"/>
+                        <outlet property="searchBar" destination="e9C-de-VwD" id="7Cf-TY-Ksp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGX-z3-nUi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

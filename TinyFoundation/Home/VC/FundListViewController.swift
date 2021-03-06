@@ -11,11 +11,15 @@ import NVActivityIndicatorView
 
 class FundListViewController: UIViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var fundList: UITableView!
     
     let cell_reuse = "fund_list_reuse_cell"
     
+    var isSearchActive :Bool = false
+    
     var dataArray: Array<FundAllModel>? = Array<FundAllModel>()
+    var searchArray: Array<FundAllModel>? = Array<FundAllModel>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,14 +62,43 @@ extension FundListViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataArray?.count ?? 0
+        if isSearchActive {
+            return searchArray?.count ?? 0
+        }else{
+            return dataArray?.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse, for: indexPath) as! FundAllCell
         
-        cell.configData(model: dataArray?[indexPath.row])
+        if isSearchActive {
+            cell.configData(model: searchArray?[indexPath.row])
+        }else{
+            cell.configData(model: dataArray?[indexPath.row])
+        }
         
         return cell
+    }
+}
+
+extension FundListViewController: UISearchBarDelegate{
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        isSearchActive = true
+        fundList.reloadData()
+        return true
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if !searchText.isEmpty {
+            searchArray = fundList.
+        }
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        isSearchActive = false
+        fundList.reloadData()
+        return true
     }
 }
