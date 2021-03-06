@@ -16,19 +16,19 @@
 		59A75FB925EE31FD0045177C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A75FB725EE31FD0045177C /* LaunchScreen.storyboard */; };
 		59A75FC425EE31FD0045177C /* TinyFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FC325EE31FD0045177C /* TinyFoundationTests.swift */; };
 		59A75FCF25EE31FE0045177C /* TinyFoundationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FCE25EE31FE0045177C /* TinyFoundationUITests.swift */; };
-		59D3B14925F1EFA70073E289 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 59D3B14825F1EFA70073E289 /* Alamofire */; };
 		59D3B14F25F1FF250073E289 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3B14E25F1FF250073E289 /* AlamofireManager.swift */; };
 		59D3B16125F20D930073E289 /* HWNetworkingOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3B15C25F20D930073E289 /* HWNetworkingOC.swift */; };
 		59D3B16225F20D930073E289 /* HWAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3B15D25F20D930073E289 /* HWAPI.swift */; };
 		59D3B16325F20D930073E289 /* HWMultipartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3B15E25F20D930073E289 /* HWMultipartData.swift */; };
 		59D3B16425F20D930073E289 /* HWNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3B15F25F20D930073E289 /* HWNetworkingError.swift */; };
 		59D3B16525F20D930073E289 /* HWNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3B16025F20D930073E289 /* HWNetworking.swift */; };
+		59D4961925F362370057C389 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 59D4961825F362370057C389 /* Alamofire */; };
+		59D4962225F3674B0057C389 /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 59D4962125F3674B0057C389 /* ObjectMapper */; };
 		59E378E725F211DB00B8B7EB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E378E625F211DB00B8B7EB /* Constant.swift */; };
 		59E378F125F2156300B8B7EB /* FundListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E378F025F2156300B8B7EB /* FundListViewController.swift */; };
 		59E378F925F21F0600B8B7EB /* FundAllCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E378F825F21F0600B8B7EB /* FundAllCell.xib */; };
 		59E378FE25F21FC400B8B7EB /* FundAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E378FD25F21FC400B8B7EB /* FundAllCell.swift */; };
 		59E3790625F220FC00B8B7EB /* FundAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3790525F220FC00B8B7EB /* FundAllModel.swift */; };
-		59E3790F25F2217800B8B7EB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 59E3790E25F2217800B8B7EB /* SwiftyJSON */; };
 		AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81FA0A44A91C8863B5614B8 /* Pods_TinyFoundation.framework */; };
 		F74403AD2E9575E272D7FE82 /* Pods_TinyFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D232254A2D9245D9ADFDBAAC /* Pods_TinyFoundationTests.framework */; };
 /* End PBXBuildFile section */
@@ -93,9 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59E3790F25F2217800B8B7EB /* SwiftyJSON in Frameworks */,
+				59D4962225F3674B0057C389 /* ObjectMapper in Frameworks */,
+				59D4961925F362370057C389 /* Alamofire in Frameworks */,
 				AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */,
-				59D3B14925F1EFA70073E289 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +297,8 @@
 			);
 			name = TinyFoundation;
 			packageProductDependencies = (
-				59D3B14825F1EFA70073E289 /* Alamofire */,
-				59E3790E25F2217800B8B7EB /* SwiftyJSON */,
+				59D4961825F362370057C389 /* Alamofire */,
+				59D4962125F3674B0057C389 /* ObjectMapper */,
 			);
 			productName = TinyFoundation;
 			productReference = 59A75FA925EE31FC0045177C /* TinyFoundation.app */;
@@ -374,8 +374,8 @@
 			);
 			mainGroup = 59A75FA025EE31FC0045177C;
 			packageReferences = (
-				59D3B14725F1EFA70073E289 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				59E3790D25F2217800B8B7EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				59D4961725F362370057C389 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				59D4962025F3674B0057C389 /* XCRemoteSwiftPackageReference "ObjectMapper" */,
 			);
 			productRefGroup = 59A75FAA25EE31FC0045177C /* Products */;
 			projectDirPath = "";
@@ -849,7 +849,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		59D3B14725F1EFA70073E289 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		59D4961725F362370057C389 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -857,26 +857,26 @@
 				minimumVersion = 5.4.1;
 			};
 		};
-		59E3790D25F2217800B8B7EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+		59D4962025F3674B0057C389 /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 4.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		59D3B14825F1EFA70073E289 /* Alamofire */ = {
+		59D4961825F362370057C389 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 59D3B14725F1EFA70073E289 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 59D4961725F362370057C389 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		59E3790E25F2217800B8B7EB /* SwiftyJSON */ = {
+		59D4962125F3674B0057C389 /* ObjectMapper */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 59E3790D25F2217800B8B7EB /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
+			package = 59D4962025F3674B0057C389 /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

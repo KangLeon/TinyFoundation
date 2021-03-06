@@ -30,10 +30,15 @@ class FundListViewController: UIViewController {
             let dict = response as? Dictionary<String,Any>
             
             if dict != nil && ((dict?.keys.contains("data")) != nil){
-                let array = dict!["data"] as? Array<Any>
                 
-                print(array)
+                if let array = dict!["data"] as? Array<Dictionary<String,Any>> {
+                    for temDict in array {
+                        self.dataArray?.append(FundAllModel.init(dict: temDict))
+                    }
+                }
             }
+            
+            print(self.dataArray)
             
         }.failed { error in
             print("error -->", error)
