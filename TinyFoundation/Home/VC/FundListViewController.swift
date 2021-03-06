@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import NVActivityIndicatorView
+import RxSwift
 
 class FundListViewController: UIViewController {
     
@@ -34,12 +34,42 @@ class FundListViewController: UIViewController {
         HN.GET(url: HOST+fund_list_url).success { response in
             print("response -->", response)
             
+            self.dataArray?.removeAll()
+            
             let dict = response as? Dictionary<String,Any>
             
             if dict != nil && ((dict?.keys.contains("data")) != nil){
                 if let array = dict!["data"] as? Array<Dictionary<String,Any>> {
                     for temDict in array {
                         self.dataArray?.append(FundAllModel.init(dict: temDict))
+                    }
+                }
+            }
+            
+            self.fundList.reloadData()
+            
+            NVHudManager.sharedInstance.dismissProgress()
+        }.failed { error in
+            print("error -->", error.code)
+            
+            NVHudManager.sharedInstance.dismissProgress()
+        }
+    }
+    
+    func searchGetData() {
+        NVHudManager.sharedInstance.showProgress()
+        
+        HN.GET(url: HOST+fund_list_key,parameters: ["key":searchBar?.text ?? ""]).success { response in
+            print("response -->", response)
+            
+            let dict = response as? Dictionary<String,Any>
+            
+            self.searchArray?.removeAll()
+            
+            if dict != nil && ((dict?.keys.contains("data")) != nil){
+                if let array = dict!["data"] as? Array<Dictionary<String,Any>> {
+                    for temDict in array {
+                        self.searchArray?.append(FundAllModel.init(dict: temDict))
                     }
                 }
             }
@@ -92,13 +122,23 @@ extension FundListViewController: UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if !searchText.isEmpty {
-            searchArray = fundList.
+            searchGetData()
         }
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        cancelSearch()
+    }
+    
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-        isSearchActive = false
-        fundList.reloadData()
+        cancelSearch()
         return true
+    }
+    
+    func cancelSearch() {
+        isSearchActive = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        fundList.reloadData()
     }
 }

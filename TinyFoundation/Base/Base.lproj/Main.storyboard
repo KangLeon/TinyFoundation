@@ -80,9 +80,13 @@
                                     <outlet property="delegate" destination="ePg-j6-ehX" id="Tmu-Au-pIQ"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="e9C-de-VwD">
+                            <searchBar contentMode="redraw" placeholder="基金名称/基金编号" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e9C-de-VwD">
                                 <rect key="frame" x="0.0" y="50" width="800" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="ePg-j6-ehX" id="kG1-ZU-RX5"/>
                                 </connections>
