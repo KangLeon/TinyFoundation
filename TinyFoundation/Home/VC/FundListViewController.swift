@@ -30,7 +30,6 @@ class FundListViewController: UIViewController {
             let dict = response as? Dictionary<String,Any>
             
             if dict != nil && ((dict?.keys.contains("data")) != nil){
-                
                 if let array = dict!["data"] as? Array<Dictionary<String,Any>> {
                     for temDict in array {
                         self.dataArray?.append(FundAllModel.init(dict: temDict))
@@ -38,10 +37,9 @@ class FundListViewController: UIViewController {
                 }
             }
             
-            print(self.dataArray)
-            
+            self.fundList.reloadData()
         }.failed { error in
-            print("error -->", error)
+            print("error -->", error.code)
         }
     }
 }
