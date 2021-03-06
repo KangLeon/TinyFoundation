@@ -19,11 +19,16 @@ class FundListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fundList.register(UINib.init(nibName: "FundAllCell", bundle: nil), forCellReuseIdentifier: cell_reuse)
+        fundList.rowHeight = 60
         requestGetData()
     }
     
     func requestGetData() {
-        
+        HN.POST(url: HOST+fund_list_url, parameters: [:]).success { response in
+            print("response -->", response)
+        }.failed { error in
+            print("error -->", error)
+        }
     }
 }
 
@@ -32,7 +37,6 @@ extension FundListViewController: UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         4
