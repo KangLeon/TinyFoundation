@@ -29,6 +29,9 @@
 		59E378F925F21F0600B8B7EB /* FundAllCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E378F825F21F0600B8B7EB /* FundAllCell.xib */; };
 		59E378FE25F21FC400B8B7EB /* FundAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E378FD25F21FC400B8B7EB /* FundAllCell.swift */; };
 		59E3790625F220FC00B8B7EB /* FundAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3790525F220FC00B8B7EB /* FundAllModel.swift */; };
+		59E520C525F377B20016100B /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 59E520C425F377B20016100B /* NVActivityIndicatorView */; };
+		59E520C725F377B20016100B /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 59E520C625F377B20016100B /* NVActivityIndicatorViewExtended */; };
+		59E520CD25F378540016100B /* NVHubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E520CC25F378540016100B /* NVHubManager.swift */; };
 		AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81FA0A44A91C8863B5614B8 /* Pods_TinyFoundation.framework */; };
 		F74403AD2E9575E272D7FE82 /* Pods_TinyFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D232254A2D9245D9ADFDBAAC /* Pods_TinyFoundationTests.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +84,7 @@
 		59E378F825F21F0600B8B7EB /* FundAllCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FundAllCell.xib; sourceTree = "<group>"; };
 		59E378FD25F21FC400B8B7EB /* FundAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundAllCell.swift; sourceTree = "<group>"; };
 		59E3790525F220FC00B8B7EB /* FundAllModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundAllModel.swift; sourceTree = "<group>"; };
+		59E520CC25F378540016100B /* NVHubManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVHubManager.swift; sourceTree = "<group>"; };
 		696B5F35DA09A5FA40D18C76 /* Pods-TinyFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation.release.xcconfig"; path = "Target Support Files/Pods-TinyFoundation/Pods-TinyFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		ACE4E10F9BF027E1BEC03E95 /* Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig"; path = "Target Support Files/Pods-TinyFoundation-TinyFoundationUITests/Pods-TinyFoundation-TinyFoundationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D232254A2D9245D9ADFDBAAC /* Pods_TinyFoundationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyFoundationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,9 +97,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59E520C525F377B20016100B /* NVActivityIndicatorView in Frameworks */,
 				59D4962225F3674B0057C389 /* ObjectMapper in Frameworks */,
 				59D4961925F362370057C389 /* Alamofire in Frameworks */,
 				AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */,
+				59E520C725F377B20016100B /* NVActivityIndicatorViewExtended in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +205,7 @@
 		59A75FEA25EE35850045177C /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				59E520CB25F3782E0016100B /* NVHud */,
 				59E378E525F211CC00B8B7EB /* Constant */,
 				59D3B14D25F1FF090073E289 /* AlamofireManager */,
 			);
@@ -269,6 +276,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		59E520CB25F3782E0016100B /* NVHud */ = {
+			isa = PBXGroup;
+			children = (
+				59E520CC25F378540016100B /* NVHubManager.swift */,
+			);
+			path = NVHud;
+			sourceTree = "<group>";
+		};
 		F51BC11F2137B161FB100D5B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +314,8 @@
 			packageProductDependencies = (
 				59D4961825F362370057C389 /* Alamofire */,
 				59D4962125F3674B0057C389 /* ObjectMapper */,
+				59E520C425F377B20016100B /* NVActivityIndicatorView */,
+				59E520C625F377B20016100B /* NVActivityIndicatorViewExtended */,
 			);
 			productName = TinyFoundation;
 			productReference = 59A75FA925EE31FC0045177C /* TinyFoundation.app */;
@@ -376,6 +393,7 @@
 			packageReferences = (
 				59D4961725F362370057C389 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				59D4962025F3674B0057C389 /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+				59E520C325F377B20016100B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 59A75FAA25EE31FC0045177C /* Products */;
 			projectDirPath = "";
@@ -499,6 +517,7 @@
 				59D3B16425F20D930073E289 /* HWNetworkingError.swift in Sources */,
 				59A75FB125EE31FC0045177C /* ViewController.swift in Sources */,
 				59A75FAD25EE31FC0045177C /* AppDelegate.swift in Sources */,
+				59E520CD25F378540016100B /* NVHubManager.swift in Sources */,
 				59E378E725F211DB00B8B7EB /* Constant.swift in Sources */,
 				59A75FAF25EE31FC0045177C /* SceneDelegate.swift in Sources */,
 				59E378FE25F21FC400B8B7EB /* FundAllCell.swift in Sources */,
@@ -865,6 +884,14 @@
 				minimumVersion = 4.2.0;
 			};
 		};
+		59E520C325F377B20016100B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -877,6 +904,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59D4962025F3674B0057C389 /* XCRemoteSwiftPackageReference "ObjectMapper" */;
 			productName = ObjectMapper;
+		};
+		59E520C425F377B20016100B /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59E520C325F377B20016100B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		59E520C625F377B20016100B /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59E520C325F377B20016100B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

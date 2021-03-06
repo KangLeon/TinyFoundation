@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import NVActivityIndicatorView
 
 class FundListViewController: UIViewController {
     
@@ -24,6 +25,8 @@ class FundListViewController: UIViewController {
     }
     
     func requestGetData() {
+        NVHudManager.sharedInstance.showProgress()
+        
         HN.GET(url: HOST+fund_list_url).success { response in
             print("response -->", response)
             
@@ -38,8 +41,12 @@ class FundListViewController: UIViewController {
             }
             
             self.fundList.reloadData()
+            
+            NVHudManager.sharedInstance.dismissProgress()
         }.failed { error in
             print("error -->", error.code)
+            
+            NVHudManager.sharedInstance.dismissProgress()
         }
     }
 }

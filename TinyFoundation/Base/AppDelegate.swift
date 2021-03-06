@@ -31,6 +31,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    func keyWindows() -> UIWindow? {
+        var window: UIWindow? = nil
+        
+        if #available(iOS 13.0, *) {
+            for windowScene: UIWindowScene in ((UIApplication.shared.connectedScenes as? Set<UIWindowScene>)!) {
+                if windowScene.activationState == .foregroundActive {
+                    window = windowScene.windows.first
+                    break
+                }
+            }
+            
+            return window
+        }else{
+            return UIApplication.shared.keyWindow
+        }
+    }
 }
 
