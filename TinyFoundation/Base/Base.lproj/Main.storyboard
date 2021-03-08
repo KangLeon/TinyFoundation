@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--基金行情-->
+        <!--实时收益-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TinyFoundation" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                             <constraint firstItem="N2y-eD-JLJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yzL-GA-y0D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="基金行情" id="XmW-Wc-lOT">
+                    <navigationItem key="navigationItem" title="实时收益" id="XmW-Wc-lOT">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="4VD-Er-MVR">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="T1l-e1-Lce">
                                 <rect key="frame" x="759" y="3" width="21" height="44"/>
