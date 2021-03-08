@@ -126,6 +126,12 @@ extension FundListViewController: UISearchBarDelegate{
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if !searchBar.text.isEmpty {
+            searchGetData()
+        }
+    }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         cancelSearch()
     }
