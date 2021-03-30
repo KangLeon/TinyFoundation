@@ -18,3 +18,4 @@ let fund_list_key = "/fund/key"
 //基金详情 参数：String code,Integer dateType 基金号、时间类型
 let fund_detail = "/fund/detail"
 
+
