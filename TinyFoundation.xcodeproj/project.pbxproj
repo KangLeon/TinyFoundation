@@ -162,8 +162,8 @@
 		59A75FAB25EE31FC0045177C /* TinyFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				59E378EF25F2154900B8B7EB /* Home */,
 				59A75FDF25EE32860045177C /* TinyFoundation.entitlements */,
+				59E378EF25F2154900B8B7EB /* Home */,
 				59A75FEA25EE35850045177C /* Tool */,
 				59A75FE925EE357C0045177C /* Base */,
 			);
