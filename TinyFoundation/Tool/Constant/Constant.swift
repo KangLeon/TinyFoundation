@@ -7,15 +7,15 @@
 
 import Foundation
 
-let HOST = "http://101.132.101.243/"
+let HOST = "http://jiyoung.cn/"
 
-//获取所有基金
-let fund_list_url = "fund/all"
-//获取分页数据 参数：int page,int size
-let fund_list_page = "/fund/all/page"
-//搜索基金 参数： String key
-let fund_list_key = "/fund/key"
+//获取基金的排行
+let fund_rank = "fund/rank"
+//获取某基金的大概
+let fund_summary = "fund/summary"
 //基金详情 参数：String code,Integer dateType 基金号、时间类型
 let fund_detail = "/fund/detail"
+//搜索基金 参数： String key
+let fund_list_key = "/fund/search"
 
 
