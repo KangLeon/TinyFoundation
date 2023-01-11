@@ -7,7 +7,7 @@
 
 import Foundation
 
-let HOST = "http://jiyoung.cn/"
+let HOST = "http://jiyoung.cn/api"
 
 //获取基金的排行
 let fund_rank = "fund/rank"

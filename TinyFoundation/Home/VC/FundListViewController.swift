@@ -24,13 +24,13 @@ class FundListViewController: UIViewController {
         super.viewDidLoad()
         fundList.register(UINib.init(nibName: "FundAllCell", bundle: nil), forCellReuseIdentifier: cell_reuse)
         fundList.rowHeight = 60
-        requestGetData()
+//        requestGetData()
     }
     
     func requestGetData() {
         NVHudManager.sharedInstance.showProgress()
         
-        HN.GET(url: HOST+fund_list_url).success { response in
+        HN.GET(url: HOST+fund_rank).success { response in
             print("response -->", response)
             
             self.dataArray?.removeAll()
@@ -58,7 +58,7 @@ class FundListViewController: UIViewController {
     func searchGetData() {
         NVHudManager.sharedInstance.showProgress()
         
-        HN.GET(url: HOST+fund_list_key,parameters: ["key":searchBar?.text ?? ""]).success { response in
+        HN.GET(url: HOST+fund_list_key,parameters: ["key_word":searchBar?.text ?? ""]).success { response in
             print("response -->", response)
             
             let dict = response as? Dictionary<String,Any>
@@ -120,9 +120,9 @@ extension FundListViewController: UISearchBarDelegate{
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if !searchText.isEmpty {
-            searchGetData()
-        }
+//        if !searchText.isEmpty {
+//            searchGetData()
+//        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
