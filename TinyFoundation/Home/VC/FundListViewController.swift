@@ -27,33 +27,33 @@ class FundListViewController: UIViewController {
 //        requestGetData()
     }
     
-    func requestGetData() {
-        NVHudManager.sharedInstance.showProgress()
-        
-        HN.GET(url: HOST+fund_rank).success { response in
-            print("response -->", response)
-            
-            self.dataArray?.removeAll()
-            
-            let dict = response as? Dictionary<String,Any>
-            
-            if dict != nil && ((dict?.keys.contains("data")) != nil){
-                if let array = dict!["data"] as? Array<Dictionary<String,Any>> {
-                    for temDict in array {
-                        self.dataArray?.append(FundAllModel.init(dict: temDict))
-                    }
-                }
-            }
-            
-            self.fundList.reloadData()
-            
-            NVHudManager.sharedInstance.dismissProgress()
-        }.failed { error in
-            print("error -->", error.code)
-            
-            NVHudManager.sharedInstance.dismissProgress()
-        }
-    }
+//    func requestGetData() {
+//        NVHudManager.sharedInstance.showProgress()
+//
+//        HN.GET(url: HOST+fund_rank).success { response in
+//            print("response -->", response)
+//
+//            self.dataArray?.removeAll()
+//
+//            let dict = response as? Dictionary<String,Any>
+//
+//            if dict != nil && ((dict?.keys.contains("data")) != nil){
+//                if let array = dict!["data"] as? Array<Dictionary<String,Any>> {
+//                    for temDict in array {
+//                        self.dataArray?.append(FundAllModel.init(dict: temDict))
+//                    }
+//                }
+//            }
+//
+//            self.fundList.reloadData()
+//
+//            NVHudManager.sharedInstance.dismissProgress()
+//        }.failed { error in
+//            print("error -->", error.code)
+//
+//            NVHudManager.sharedInstance.dismissProgress()
+//        }
+//    }
     
     func searchGetData() {
         NVHudManager.sharedInstance.showProgress()
@@ -66,9 +66,9 @@ class FundListViewController: UIViewController {
             self.searchArray?.removeAll()
             
             if dict != nil && ((dict?.keys.contains("data")) != nil){
-                if let array = dict!["data"] as? Array<Dictionary<String,Any>> {
-                    for temDict in array {
-                        self.searchArray?.append(FundAllModel.init(dict: temDict))
+                if let array = dict!["data"] as? Array<Array<Any>> {
+                    for subArray in array {
+                        self.searchArray?.append(FundAllModel.init(array: subArray))
                     }
                 }
             }

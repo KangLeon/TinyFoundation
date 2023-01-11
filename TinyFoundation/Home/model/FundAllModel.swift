@@ -9,25 +9,23 @@ import Foundation
 
 class FundAllModel: NSObject {
     
-    var fundAbbreviation :String?
+    var fundCode :String?
     var fundName :String?
-    var fundNumber :String?
-    var fundPinyin :String?
+    var fundDisplayName :String?
     var fundType :String?
-    var id :String?
+    var fundFullName :String?
     
     override init() {
         super.init()
     }
     
-    convenience init(dict: Dictionary<String, Any>) {
+    convenience init(array: Array<Any>) {
         self.init()
         
-        fundAbbreviation = dict["fundAbbreviation"] as? String
-        fundName = dict["fundName"] as? String
-        fundNumber = dict["fundNumber"] as? String
-        fundPinyin = dict["fundPinyin"] as? String
-        fundType = dict["fundType"] as? String
-        id = dict["id"] as? String
+        fundCode = array[0] as? String
+        fundName = array[1] as? String
+        fundDisplayName = array[2] as? String
+        fundType = array[3] as? String
+        fundFullName = array[4] as? String
     }
 }

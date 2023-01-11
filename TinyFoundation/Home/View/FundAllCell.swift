@@ -19,8 +19,8 @@ class FundAllCell: UITableViewCell {
     }
     
     func configData(model: FundAllModel!) {
-        name.text = model.fundName
-        number.text = model.fundNumber
+        name.text = model.fundDisplayName
+        number.text = model.fundCode
         type.text = model.fundType
     }
 }
