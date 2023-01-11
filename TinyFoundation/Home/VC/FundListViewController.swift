@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Defaults
 
 class FundListViewController: UIViewController {
     
@@ -26,34 +27,6 @@ class FundListViewController: UIViewController {
         fundList.rowHeight = 60
 //        requestGetData()
     }
-    
-//    func requestGetData() {
-//        NVHudManager.sharedInstance.showProgress()
-//
-//        HN.GET(url: HOST+fund_rank).success { response in
-//            print("response -->", response)
-//
-//            self.dataArray?.removeAll()
-//
-//            let dict = response as? Dictionary<String,Any>
-//
-//            if dict != nil && ((dict?.keys.contains("data")) != nil){
-//                if let array = dict!["data"] as? Array<Dictionary<String,Any>> {
-//                    for temDict in array {
-//                        self.dataArray?.append(FundAllModel.init(dict: temDict))
-//                    }
-//                }
-//            }
-//
-//            self.fundList.reloadData()
-//
-//            NVHudManager.sharedInstance.dismissProgress()
-//        }.failed { error in
-//            print("error -->", error.code)
-//
-//            NVHudManager.sharedInstance.dismissProgress()
-//        }
-//    }
     
     func searchGetData() {
         NVHudManager.sharedInstance.showProgress()
@@ -82,6 +55,14 @@ class FundListViewController: UIViewController {
             NVHudManager.sharedInstance.dismissProgress()
         }
     }
+    
+    func saveDateToLocal(index: Int) {
+        let model = searchArray?[index]
+        
+        if let code = model?.fundCode {
+            Defaults[.fundCodeArray] += [code]
+        }
+    }
 }
 
 extension FundListViewController: UITableViewDelegate,UITableViewDataSource{
@@ -108,6 +89,16 @@ extension FundListViewController: UITableViewDelegate,UITableViewDataSource{
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //存储当前选中的数据到本地
+        saveDateToLocal(index: indexPath.row)
+        
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let window = delegate.keyWindows()
+        let navController = window?.rootViewController as! UINavigationController
+        navController.popViewController(animated: true)
     }
 }
 

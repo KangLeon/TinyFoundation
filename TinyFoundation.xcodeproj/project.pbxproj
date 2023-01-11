@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1030A461E5045F38A4D5A3D9 /* Pods_TinyFoundation_TinyFoundationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37EF23736A00C4C2168BC335 /* Pods_TinyFoundation_TinyFoundationUITests.framework */; };
+		2B3EDCF3296EAA240007C61B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2B3EDCF2296EAA240007C61B /* Alamofire */; };
+		2B3EDCF6296EAA670007C61B /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 2B3EDCF5296EAA670007C61B /* ObjectMapper */; };
+		2B3EDCF9296EAA890007C61B /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 2B3EDCF8296EAA890007C61B /* NVActivityIndicatorView */; };
+		2B3EDCFB296EAA890007C61B /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 2B3EDCFA296EAA890007C61B /* NVActivityIndicatorViewExtended */; };
+		2B3EDCFF296EADD50007C61B /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 2B3EDCFE296EADD50007C61B /* Defaults */; };
 		59A75FAD25EE31FC0045177C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FAC25EE31FC0045177C /* AppDelegate.swift */; };
 		59A75FAF25EE31FC0045177C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FAE25EE31FC0045177C /* SceneDelegate.swift */; };
 		59A75FB125EE31FC0045177C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FB025EE31FC0045177C /* ViewController.swift */; };
@@ -22,15 +27,11 @@
 		59D3B16325F20D930073E289 /* HWMultipartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3B15E25F20D930073E289 /* HWMultipartData.swift */; };
 		59D3B16425F20D930073E289 /* HWNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3B15F25F20D930073E289 /* HWNetworkingError.swift */; };
 		59D3B16525F20D930073E289 /* HWNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3B16025F20D930073E289 /* HWNetworking.swift */; };
-		59D4961925F362370057C389 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 59D4961825F362370057C389 /* Alamofire */; };
-		59D4962225F3674B0057C389 /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 59D4962125F3674B0057C389 /* ObjectMapper */; };
 		59E378E725F211DB00B8B7EB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E378E625F211DB00B8B7EB /* Constant.swift */; };
 		59E378F125F2156300B8B7EB /* FundListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E378F025F2156300B8B7EB /* FundListViewController.swift */; };
 		59E378F925F21F0600B8B7EB /* FundAllCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E378F825F21F0600B8B7EB /* FundAllCell.xib */; };
 		59E378FE25F21FC400B8B7EB /* FundAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E378FD25F21FC400B8B7EB /* FundAllCell.swift */; };
 		59E3790625F220FC00B8B7EB /* FundAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3790525F220FC00B8B7EB /* FundAllModel.swift */; };
-		59E520C525F377B20016100B /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 59E520C425F377B20016100B /* NVActivityIndicatorView */; };
-		59E520C725F377B20016100B /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 59E520C625F377B20016100B /* NVActivityIndicatorViewExtended */; };
 		59E520CD25F378540016100B /* NVHubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E520CC25F378540016100B /* NVHubManager.swift */; };
 		AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81FA0A44A91C8863B5614B8 /* Pods_TinyFoundation.framework */; };
 		F74403AD2E9575E272D7FE82 /* Pods_TinyFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D232254A2D9245D9ADFDBAAC /* Pods_TinyFoundationTests.framework */; };
@@ -97,11 +98,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59E520C525F377B20016100B /* NVActivityIndicatorView in Frameworks */,
-				59D4962225F3674B0057C389 /* ObjectMapper in Frameworks */,
-				59D4961925F362370057C389 /* Alamofire in Frameworks */,
+				2B3EDCFF296EADD50007C61B /* Defaults in Frameworks */,
+				2B3EDCF9296EAA890007C61B /* NVActivityIndicatorView in Frameworks */,
+				2B3EDCF6296EAA670007C61B /* ObjectMapper in Frameworks */,
 				AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */,
-				59E520C725F377B20016100B /* NVActivityIndicatorViewExtended in Frameworks */,
+				2B3EDCF3296EAA240007C61B /* Alamofire in Frameworks */,
+				2B3EDCFB296EAA890007C61B /* NVActivityIndicatorViewExtended in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,9 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				59A75FDF25EE32860045177C /* TinyFoundation.entitlements */,
-				59E378EF25F2154900B8B7EB /* Home */,
 				59A75FEA25EE35850045177C /* Tool */,
 				59A75FE925EE357C0045177C /* Base */,
+				59E378EF25F2154900B8B7EB /* Home */,
 			);
 			path = TinyFoundation;
 			sourceTree = "<group>";
@@ -312,10 +314,11 @@
 			);
 			name = TinyFoundation;
 			packageProductDependencies = (
-				59D4961825F362370057C389 /* Alamofire */,
-				59D4962125F3674B0057C389 /* ObjectMapper */,
-				59E520C425F377B20016100B /* NVActivityIndicatorView */,
-				59E520C625F377B20016100B /* NVActivityIndicatorViewExtended */,
+				2B3EDCF2296EAA240007C61B /* Alamofire */,
+				2B3EDCF5296EAA670007C61B /* ObjectMapper */,
+				2B3EDCF8296EAA890007C61B /* NVActivityIndicatorView */,
+				2B3EDCFA296EAA890007C61B /* NVActivityIndicatorViewExtended */,
+				2B3EDCFE296EADD50007C61B /* Defaults */,
 			);
 			productName = TinyFoundation;
 			productReference = 59A75FA925EE31FC0045177C /* TinyFoundation.app */;
@@ -392,9 +395,10 @@
 			);
 			mainGroup = 59A75FA025EE31FC0045177C;
 			packageReferences = (
-				59D4961725F362370057C389 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				59D4962025F3674B0057C389 /* XCRemoteSwiftPackageReference "ObjectMapper" */,
-				59E520C325F377B20016100B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				2B3EDCF1296EAA240007C61B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2B3EDCF4296EAA670007C61B /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+				2B3EDCF7296EAA890007C61B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				2B3EDCFD296EADD50007C61B /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = 59A75FAA25EE31FC0045177C /* Products */;
 			projectDirPath = "";
@@ -869,52 +873,65 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		59D4961725F362370057C389 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		2B3EDCF1296EAA240007C61B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.1;
+				branch = master;
+				kind = branch;
 			};
 		};
-		59D4962025F3674B0057C389 /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+		2B3EDCF4296EAA670007C61B /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper";
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.2.0;
+				minimumVersion = 4.0.0;
 			};
 		};
-		59E520C325F377B20016100B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+		2B3EDCF7296EAA890007C61B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.1;
+				minimumVersion = 5.0.0;
+			};
+		};
+		2B3EDCFD296EADD50007C61B /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults.git";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		59D4961825F362370057C389 /* Alamofire */ = {
+		2B3EDCF2296EAA240007C61B /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 59D4961725F362370057C389 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 2B3EDCF1296EAA240007C61B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		59D4962125F3674B0057C389 /* ObjectMapper */ = {
+		2B3EDCF5296EAA670007C61B /* ObjectMapper */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 59D4962025F3674B0057C389 /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			package = 2B3EDCF4296EAA670007C61B /* XCRemoteSwiftPackageReference "ObjectMapper" */;
 			productName = ObjectMapper;
 		};
-		59E520C425F377B20016100B /* NVActivityIndicatorView */ = {
+		2B3EDCF8296EAA890007C61B /* NVActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 59E520C325F377B20016100B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			package = 2B3EDCF7296EAA890007C61B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
 		};
-		59E520C625F377B20016100B /* NVActivityIndicatorViewExtended */ = {
+		2B3EDCFA296EAA890007C61B /* NVActivityIndicatorViewExtended */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 59E520C325F377B20016100B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			package = 2B3EDCF7296EAA890007C61B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorViewExtended;
+		};
+		2B3EDCFE296EADD50007C61B /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B3EDCFD296EADD50007C61B /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
