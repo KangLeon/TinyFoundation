@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import Defaults
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var selectedFundArray: Array<FundAllModel>? = Array<FundAllModel>()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -47,5 +48,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return UIApplication.shared.keyWindow
         }
     }
+    
+    func exchangeRootViewController() {
+        let fundCodeArray = Defaults[.fundCodeArray]
+        if fundCodeArray.count > 0 {
+            //show SplitViewController
+            
+        }else {
+            //show NavigationViewController
+            
+        }
+    }
 }
 
+extension Defaults.Keys {
+    static let fundCodeArray = Key<Array<String>>("fund_code_array", default: [])
+}
