@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1030A461E5045F38A4D5A3D9 /* Pods_TinyFoundation_TinyFoundationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37EF23736A00C4C2168BC335 /* Pods_TinyFoundation_TinyFoundationUITests.framework */; };
+		2B25D49C296FEF1D008B8FBC /* OperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25D49A296FEF1D008B8FBC /* OperationCell.swift */; };
+		2B25D49D296FEF1D008B8FBC /* OperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B25D49B296FEF1D008B8FBC /* OperationCell.xib */; };
+		2B25D49F296FF620008B8FBC /* FundDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25D49E296FF620008B8FBC /* FundDetailModel.swift */; };
 		2B3EDCF3296EAA240007C61B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2B3EDCF2296EAA240007C61B /* Alamofire */; };
 		2B3EDCF6296EAA670007C61B /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 2B3EDCF5296EAA670007C61B /* ObjectMapper */; };
 		2B3EDCF9296EAA890007C61B /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 2B3EDCF8296EAA890007C61B /* NVActivityIndicatorView */; };
@@ -58,6 +61,9 @@
 
 /* Begin PBXFileReference section */
 		1DA866EE7A0862D2E6C6C02B /* Pods-TinyFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation.debug.xcconfig"; path = "Target Support Files/Pods-TinyFoundation/Pods-TinyFoundation.debug.xcconfig"; sourceTree = "<group>"; };
+		2B25D49A296FEF1D008B8FBC /* OperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCell.swift; sourceTree = "<group>"; };
+		2B25D49B296FEF1D008B8FBC /* OperationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OperationCell.xib; sourceTree = "<group>"; };
+		2B25D49E296FF620008B8FBC /* FundDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundDetailModel.swift; sourceTree = "<group>"; };
 		2B3EE124296FA9970007C61B /* SecondaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryViewController.swift; sourceTree = "<group>"; };
 		2B3EE128296FB7610007C61B /* SupplementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementViewController.swift; sourceTree = "<group>"; };
 		2B3EE12A296FB7D70007C61B /* PrimaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTableViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				59E3790525F220FC00B8B7EB /* FundAllModel.swift */,
+				2B25D49E296FF620008B8FBC /* FundDetailModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -280,6 +287,8 @@
 			children = (
 				59E378F825F21F0600B8B7EB /* FundAllCell.xib */,
 				59E378FD25F21FC400B8B7EB /* FundAllCell.swift */,
+				2B25D49A296FEF1D008B8FBC /* OperationCell.swift */,
+				2B25D49B296FEF1D008B8FBC /* OperationCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -426,6 +435,7 @@
 				59A75FB625EE31FD0045177C /* Assets.xcassets in Resources */,
 				59E378F925F21F0600B8B7EB /* FundAllCell.xib in Resources */,
 				59A75FB425EE31FC0045177C /* Main.storyboard in Resources */,
+				2B25D49D296FEF1D008B8FBC /* OperationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +532,7 @@
 				59D3B16125F20D930073E289 /* HWNetworkingOC.swift in Sources */,
 				59D3B14F25F1FF250073E289 /* AlamofireManager.swift in Sources */,
 				59D3B16525F20D930073E289 /* HWNetworking.swift in Sources */,
+				2B25D49F296FF620008B8FBC /* FundDetailModel.swift in Sources */,
 				59D3B16325F20D930073E289 /* HWMultipartData.swift in Sources */,
 				59E378F125F2156300B8B7EB /* FundListViewController.swift in Sources */,
 				2B3EE125296FA9970007C61B /* SecondaryViewController.swift in Sources */,
@@ -530,6 +541,7 @@
 				59D3B16425F20D930073E289 /* HWNetworkingError.swift in Sources */,
 				2B3EE12B296FB7D70007C61B /* PrimaryTableViewController.swift in Sources */,
 				59A75FAD25EE31FC0045177C /* AppDelegate.swift in Sources */,
+				2B25D49C296FEF1D008B8FBC /* OperationCell.swift in Sources */,
 				59E520CD25F378540016100B /* NVHubManager.swift in Sources */,
 				59E378E725F211DB00B8B7EB /* Constant.swift in Sources */,
 				59A75FAF25EE31FC0045177C /* SceneDelegate.swift in Sources */,

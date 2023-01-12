@@ -25,9 +25,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
           let secondaryViewController = (splitViewController.viewControllers[2] as? UINavigationController)?.topViewController as? SecondaryViewController
           else { fatalError() }
 
+        secondaryViewController.navigationController?.navigationBar.isHidden = true
 //        let firstMonster = primaryViewController.fruits.first
 //        detailViewController.furti = firstMonster
-          primaryViewController.delegate = secondaryViewController
+        primaryViewController.delegate = secondaryViewController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

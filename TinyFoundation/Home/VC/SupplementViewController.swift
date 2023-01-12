@@ -10,8 +10,16 @@ import Foundation
 import UIKit
 
 class SupplementViewController: UIViewController {
+    
+    @IBOutlet weak var operationTableView: UITableView!
+    
+    let cell_reuse_operation = "fund_operation_cell_reuse"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        operationTableView.register(UINib.init(nibName: "OperationCell", bundle: nil), forCellReuseIdentifier: cell_reuse_operation)
+        operationTableView.rowHeight = 60
     }
     
     //    func requestGetData() {
@@ -41,4 +49,20 @@ class SupplementViewController: UIViewController {
     //            NVHudManager.sharedInstance.dismissProgress()
     //        }
     //    }
+}
+
+extension SupplementViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse_operation, for: indexPath) as! OperationCell
+        
+        cell.configData(name: "操作记录")
+        
+        return cell
+    }
 }
