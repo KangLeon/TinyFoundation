@@ -2,14 +2,14 @@
 //  SupplementViewController.swift
 //  TinyFoundation
 //
-//  Created by Bytedance on 12/1/23.
+//  Created by JY on 12/1/23.
 //  Copyright © 2023 JY. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class SupplementViewController: ViewController {
+class SupplementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -2,45 +2,94 @@
 //  PrimaryTableViewController.swift
 //  TinyFoundation
 //
-//  Created by Bytedance on 12/1/23.
+//  Created by JY on 12/1/23.
 //  Copyright © 2023 JY. All rights reserved.
 //
 
 import UIKit
+import Defaults
+
+protocol FundSelectionDelegate: UIViewController {
+  func fundDidSelected(_ newFundCode: String)
+}
+
+extension Defaults.Keys {
+    static let fundCodeArray = Key<Array<String>>("fund_code_array", default: [])
+}
 
 class PrimaryTableViewController: UITableViewController {
 
+    let cell_reuse = "fund_list_reuse_cell"
+    var delegate: FundSelectionDelegate?
+    var selectedFundArray: Array<FundAllModel>? = Array<FundAllModel>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        requestGetAllFavorate()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.register(UINib.init(nibName: "FundAllCell", bundle: nil), forCellReuseIdentifier: cell_reuse)
+        self.tableView.rowHeight = 60
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let savedCodeArray = Defaults[.fundCodeArray]
+        if savedCodeArray.count > 0 {
+            delegate?.fundDidSelected(savedCodeArray[0])
+        }
+    }
+    
+    func requestGetAllFavorate() {
+        let savedCodeArray = Defaults[.fundCodeArray]
+        
+        NVHudManager.sharedInstance.showProgress()
+        let keyWords = savedCodeArray.joined(separator: ",")
+        
+        HN.GET(url: HOST+fund_list_key,parameters: ["key_word": keyWords]).success { response in
+            print("response -->", response)
+            
+            let dict = response as? Dictionary<String,Any>
+            
+            self.selectedFundArray?.removeAll()
+            
+            if dict != nil && ((dict?.keys.contains("data")) != nil){
+                if let array = dict!["data"] as? Array<Array<Any>> {
+                    for subArray in array {
+                        self.selectedFundArray?.append(FundAllModel.init(array: subArray))
+                    }
+                }
+            }
+            
+            self.tableView.reloadData()
+            
+            NVHudManager.sharedInstance.dismissProgress()
+        }.failed { error in
+            print("error -->", error.code)
+            
+            NVHudManager.sharedInstance.dismissProgress()
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return selectedFundArray?.count ?? 0
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse, for: indexPath) as! FundAllCell
+        
+        cell.configData(model: selectedFundArray?[indexPath.row])
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

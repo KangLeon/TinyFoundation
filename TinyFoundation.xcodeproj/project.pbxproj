@@ -18,7 +18,6 @@
 		2B3EE12B296FB7D70007C61B /* PrimaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EE12A296FB7D70007C61B /* PrimaryTableViewController.swift */; };
 		59A75FAD25EE31FC0045177C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FAC25EE31FC0045177C /* AppDelegate.swift */; };
 		59A75FAF25EE31FC0045177C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FAE25EE31FC0045177C /* SceneDelegate.swift */; };
-		59A75FB125EE31FC0045177C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FB025EE31FC0045177C /* ViewController.swift */; };
 		59A75FB425EE31FC0045177C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A75FB225EE31FC0045177C /* Main.storyboard */; };
 		59A75FB625EE31FD0045177C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A75FB525EE31FD0045177C /* Assets.xcassets */; };
 		59A75FB925EE31FD0045177C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A75FB725EE31FD0045177C /* LaunchScreen.storyboard */; };
@@ -68,7 +67,6 @@
 		59A75FA925EE31FC0045177C /* TinyFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A75FAC25EE31FC0045177C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A75FAE25EE31FC0045177C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		59A75FB025EE31FC0045177C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		59A75FB325EE31FC0045177C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59A75FB525EE31FD0045177C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59A75FB825EE31FD0045177C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 			children = (
 				59A75FAC25EE31FC0045177C /* AppDelegate.swift */,
 				59A75FAE25EE31FC0045177C /* SceneDelegate.swift */,
-				59A75FB025EE31FC0045177C /* ViewController.swift */,
 				59A75FB225EE31FC0045177C /* Main.storyboard */,
 				59A75FB525EE31FD0045177C /* Assets.xcassets */,
 				59A75FB725EE31FD0045177C /* LaunchScreen.storyboard */,
@@ -531,7 +528,6 @@
 				59E3790625F220FC00B8B7EB /* FundAllModel.swift in Sources */,
 				2B3EE129296FB7610007C61B /* SupplementViewController.swift in Sources */,
 				59D3B16425F20D930073E289 /* HWNetworkingError.swift in Sources */,
-				59A75FB125EE31FC0045177C /* ViewController.swift in Sources */,
 				2B3EE12B296FB7D70007C61B /* PrimaryTableViewController.swift in Sources */,
 				59A75FAD25EE31FC0045177C /* AppDelegate.swift in Sources */,
 				59E520CD25F378540016100B /* NVHubManager.swift in Sources */,
