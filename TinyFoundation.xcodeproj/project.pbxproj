@@ -13,6 +13,8 @@
 		2B3EDCF9296EAA890007C61B /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 2B3EDCF8296EAA890007C61B /* NVActivityIndicatorView */; };
 		2B3EDCFB296EAA890007C61B /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 2B3EDCFA296EAA890007C61B /* NVActivityIndicatorViewExtended */; };
 		2B3EDCFF296EADD50007C61B /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 2B3EDCFE296EADD50007C61B /* Defaults */; };
+		2B3EE125296FA9970007C61B /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EE124296FA9970007C61B /* SplitViewController.swift */; };
+		2B3EE127296FA9FD0007C61B /* PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EE126296FA9FD0007C61B /* PrimaryViewController.swift */; };
 		59A75FAD25EE31FC0045177C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FAC25EE31FC0045177C /* AppDelegate.swift */; };
 		59A75FAF25EE31FC0045177C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FAE25EE31FC0045177C /* SceneDelegate.swift */; };
 		59A75FB125EE31FC0045177C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FB025EE31FC0045177C /* ViewController.swift */; };
@@ -56,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		1DA866EE7A0862D2E6C6C02B /* Pods-TinyFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation.debug.xcconfig"; path = "Target Support Files/Pods-TinyFoundation/Pods-TinyFoundation.debug.xcconfig"; sourceTree = "<group>"; };
+		2B3EE124296FA9970007C61B /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		2B3EE126296FA9FD0007C61B /* PrimaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryViewController.swift; sourceTree = "<group>"; };
 		37EF23736A00C4C2168BC335 /* Pods_TinyFoundation_TinyFoundationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyFoundation_TinyFoundationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7EE4ED79BE5591DEAEC55A /* Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig"; path = "Target Support Files/Pods-TinyFoundation-TinyFoundationUITests/Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		52BB1E063ADA7E2AE9F011ED /* Pods-TinyFoundationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundationTests.release.xcconfig"; path = "Target Support Files/Pods-TinyFoundationTests/Pods-TinyFoundationTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -265,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				59E378F025F2156300B8B7EB /* FundListViewController.swift */,
+				2B3EE124296FA9970007C61B /* SplitViewController.swift */,
+				2B3EE126296FA9FD0007C61B /* PrimaryViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -518,9 +524,11 @@
 				59D3B16525F20D930073E289 /* HWNetworking.swift in Sources */,
 				59D3B16325F20D930073E289 /* HWMultipartData.swift in Sources */,
 				59E378F125F2156300B8B7EB /* FundListViewController.swift in Sources */,
+				2B3EE125296FA9970007C61B /* SplitViewController.swift in Sources */,
 				59E3790625F220FC00B8B7EB /* FundAllModel.swift in Sources */,
 				59D3B16425F20D930073E289 /* HWNetworkingError.swift in Sources */,
 				59A75FB125EE31FC0045177C /* ViewController.swift in Sources */,
+				2B3EE127296FA9FD0007C61B /* PrimaryViewController.swift in Sources */,
 				59A75FAD25EE31FC0045177C /* AppDelegate.swift in Sources */,
 				59E520CD25F378540016100B /* NVHubManager.swift in Sources */,
 				59E378E725F211DB00B8B7EB /* Constant.swift in Sources */,
