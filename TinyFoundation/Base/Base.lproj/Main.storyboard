@@ -29,7 +29,7 @@
                                 <buttonConfiguration key="configuration" style="filled" image="gear.circle" catalog="system" title=""/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9m-Zw-sAN">
-                                <rect key="frame" x="12" y="122" width="936" height="24"/>
+                                <rect key="frame" x="12" y="460" width="936" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="44J-7r-Fm8"/>
                                 </constraints>
@@ -38,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErM-I2-hhX">
-                                <rect key="frame" x="12" y="158" width="936" height="24"/>
+                                <rect key="frame" x="12" y="496" width="936" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="kTk-QG-tyt"/>
                                 </constraints>
@@ -56,7 +56,7 @@
                             <constraint firstItem="sYa-DV-XCv" firstAttribute="top" secondItem="b8J-Rd-nnE" secondAttribute="top" constant="12" id="Tkp-Kb-zEK"/>
                             <constraint firstItem="ErM-I2-hhX" firstAttribute="top" secondItem="w9m-Zw-sAN" secondAttribute="bottom" constant="12" id="Y7R-VV-lH6"/>
                             <constraint firstItem="ErM-I2-hhX" firstAttribute="leading" secondItem="b8J-Rd-nnE" secondAttribute="leading" constant="12" id="ZCe-KB-m24"/>
-                            <constraint firstItem="w9m-Zw-sAN" firstAttribute="top" secondItem="sYa-DV-XCv" secondAttribute="bottom" constant="12" id="bW9-y4-SVw"/>
+                            <constraint firstItem="w9m-Zw-sAN" firstAttribute="top" secondItem="sYa-DV-XCv" secondAttribute="bottom" constant="350" id="bW9-y4-SVw"/>
                             <constraint firstItem="w9m-Zw-sAN" firstAttribute="leading" secondItem="b8J-Rd-nnE" secondAttribute="leading" constant="12" id="tFO-1W-5o6"/>
                         </constraints>
                     </view>
@@ -64,6 +64,7 @@
                     <connections>
                         <outlet property="fundNameLabel" destination="w9m-Zw-sAN" id="zN9-x0-uhn"/>
                         <outlet property="fundTypeLabel" destination="ErM-I2-hhX" id="51Z-18-jTR"/>
+                        <outlet property="settingsButton" destination="sYa-DV-XCv" id="IUy-6E-QQK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L1T-eH-W0b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
