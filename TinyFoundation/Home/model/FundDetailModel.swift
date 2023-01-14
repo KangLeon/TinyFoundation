@@ -15,6 +15,14 @@ class FundDetailModel: NSObject {
     var fundType :String?
     var expectWorth: Double?
     var expectGrowth: String?
+    var lastWeekWorth: String?
+    var lastMonthWorth: String?
+    var lastThreeWeekWorth: String?
+    var lastSixWeekWorth: String?
+    var lastYearWorth: String?
+    var buyFee: String?
+    var buyStart: String?
+    
     var netWorthData :Array<NetWorthModel>?
     
     override init() {
@@ -29,6 +37,14 @@ class FundDetailModel: NSObject {
         fundType = dict["type"] as? String
         expectWorth = dict["expectWorth"] as? Double
         expectGrowth = dict["expectGrowth"] as? String
+        lastWeekWorth = dict["lastWeekGrowth"] as? String
+        lastMonthWorth = dict["lastMonthGrowth"] as? String
+        lastThreeWeekWorth = dict["lastThreeMonthsGrowth"] as? String
+        lastSixWeekWorth = dict["lastSixMonthsGrowth"] as? String
+        lastYearWorth = dict["lastYearGrowth"] as? String
+        buyFee = dict["buyRate"] as? String
+        buyStart = dict["buyMin"] as? String
+        
         
         var temNetWorthDateArray :Array<NetWorthModel> = []
         if dict.keys.contains("netWorthData") {

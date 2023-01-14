@@ -15,6 +15,16 @@ class SecondaryViewController: UIViewController {
     var fundChart: LineChartView?
     @IBOutlet weak var fundTypeLabel: UILabel!
     @IBOutlet weak var fundNameLabel: UILabel!
+    
+    @IBOutlet weak var lastWeekNet: UILabel!
+    @IBOutlet weak var lastMonthNet: UILabel!
+    @IBOutlet weak var lastThreeMonthNet: UILabel!
+    @IBOutlet weak var lastSixMonthNet: UILabel!
+    @IBOutlet weak var lastYearNet: UILabel!
+    
+    @IBOutlet weak var buyFee: UILabel!
+    @IBOutlet weak var buyStart: UILabel!
+    
     @IBOutlet weak var settingsButton: UIButton!
     var detailModel: FundDetailModel?
     override func viewDidLoad() {
@@ -96,6 +106,13 @@ class SecondaryViewController: UIViewController {
     func configData() {
         fundNameLabel.text = detailModel?.fundDisplayName
         fundTypeLabel.text = detailModel?.fundType
+        lastWeekNet.text = detailModel?.lastWeekWorth
+        lastMonthNet.text = detailModel?.lastMonthWorth
+        lastThreeMonthNet.text = detailModel?.lastThreeWeekWorth
+        lastSixMonthNet.text = detailModel?.lastSixWeekWorth
+        lastYearNet.text = detailModel?.lastYearWorth
+        buyFee.text = detailModel?.buyFee
+        buyStart.text = detailModel?.buyStart
         
         configChart()
     }
