@@ -13,6 +13,7 @@ import SnapKit
 
 class SecondaryViewController: UIViewController {
     var fundChart: LineChartView?
+    @IBOutlet weak var backStackView: UIStackView!
     @IBOutlet weak var fundTypeLabel: UILabel!
     @IBOutlet weak var fundNameLabel: UILabel!
     
