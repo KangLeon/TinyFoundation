@@ -25,20 +25,29 @@ class SecondaryViewController: UIViewController {
     
     @IBOutlet weak var buyFee: UILabel!
     @IBOutlet weak var buyStart: UILabel!
-    
-    @IBOutlet weak var settingsButton: UIButton!
     var detailModel: FundDetailModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addUI()
+    }
+    
+    func addUI() {
         fundChart = LineChartView()
         view.addSubview(fundChart!)
         
         fundChart?.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(self.view).offset(12)
             make.right.equalTo(self.view).offset(-12)
-            make.top.equalTo(self.settingsButton.snp_bottomMargin).offset(12)
+            make.top.equalTo(self.view).offset(64)
             make.height.equalTo(300)
+        }
+        
+        for view in backStackView.subviews {
+            if view.tag == 0 || view.tag == 1 || view.tag == 2 || view.tag == 3 || view.tag == 4 {
+                view.layer.cornerRadius = 10
+                view.layer.opacity = 0.8
+            }
         }
     }
     

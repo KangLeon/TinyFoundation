@@ -21,7 +21,10 @@ class PrimaryTableViewController: UITableViewController {
 
     let cell_reuse = "fund_list_reuse_cell"
     var delegate: FundSelectionDelegate?
+    var selectedIndex: Int?
+    var searchMode = false
     var selectedFundArray: Array<FundAllModel>? = Array<FundAllModel>()
+    var searchFundArray: Array<FundAllModel>? = Array<FundAllModel>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +38,11 @@ class PrimaryTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         let savedCodeArray = Defaults[.fundCodeArray]
         if savedCodeArray.count > 0 {
-            delegate?.fundDidSelected(savedCodeArray[0])
+            if selectedIndex != nil {
+                delegate?.fundDidSelected(savedCodeArray[selectedIndex!])
+            }else{
+                delegate?.fundDidSelected(savedCodeArray[0])
+            }
         }
     }
     
