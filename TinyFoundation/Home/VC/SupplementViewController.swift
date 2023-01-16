@@ -13,6 +13,9 @@ class SupplementViewController: UIViewController {
     
     @IBOutlet weak var operationTableView: UITableView!
     
+    var operationArray = ["买卖记录","加仓猛干！","大吉大利，今晚吃鸡！","交易通知"]
+    var operationIconArray = ["fund-operation", "fund-decrease", "fund-increase", "fund-notification"]
+    
     let cell_reuse_operation = "fund_operation_cell_reuse"
     
     override func viewDidLoad() {
@@ -56,12 +59,12 @@ extension SupplementViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return operationArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse_operation, for: indexPath) as! OperationCell
         
-        cell.configData(name: "操作记录")
+        cell.configData(name: operationArray[indexPath.row], icon: operationIconArray[indexPath.row])
         
         return cell
     }

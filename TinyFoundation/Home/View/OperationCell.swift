@@ -10,6 +10,8 @@ import UIKit
 
 class OperationCell: UITableViewCell {
 
+    @IBOutlet weak var operationIcon: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,7 +25,8 @@ class OperationCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configData(name: String) {
+    func configData(name: String, icon: String) {
         operationNameLabel.text = name
+        operationIcon.image = UIImage(named: icon)
     }
 }

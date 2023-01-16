@@ -22,9 +22,11 @@ class SecondaryViewController: UIViewController {
     @IBOutlet weak var lastSixMonthNet: UILabel!
     @IBOutlet weak var lastYearNet: UILabel!
     
+    
     @IBOutlet weak var buyFee: UILabel!
     @IBOutlet weak var buyStart: UILabel!
     var detailModel: FundDetailModel?
+    var currneFundCode: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -121,19 +123,31 @@ class SecondaryViewController: UIViewController {
         buyFee.text = detailModel?.buyFee
         buyStart.text = detailModel?.buyStart
         
+        loadFundChart()
         configChart()
     }
     
-    func loadFundChart() {
-        if let imageData = try? Data(contentsOf: URL(string: "http://j4.dfcfw.com/charts/pic6/001404.png?_=1673860450")!) {
-            chartImage.image = UIImage.init(data: imageData)
-        }
+    func loadFundChart()  {
+        let timeStamp = getCurrentTimeStamp()
+        let path = """
+http://j4.dfcfw.com/charts/pic6/\(currneFundCode ?? "").png?_=\(timeStamp)
+"""
+        if let url = URL(string: path) {
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+              guard let imageData = data else { return }
+
+                DispatchQueue.main.async { [self] in
+                  chartImage.image = UIImage.init(data: imageData)
+              }
+            }.resume()
+          }
     }
 }
 
 
 extension SecondaryViewController: FundSelectionDelegate {
     func fundDidSelected(_ newFundCode: String) {
+        currneFundCode = newFundCode
         requestGetFundDetail(fundCode: newFundCode)
     }
 }
