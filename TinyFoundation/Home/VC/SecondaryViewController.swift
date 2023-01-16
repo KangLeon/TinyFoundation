@@ -13,9 +13,8 @@ import SnapKit
 
 class SecondaryViewController: UIViewController {
     var fundChart: LineChartView?
+    @IBOutlet weak var chartImage: UIImageView!
     @IBOutlet weak var backStackView: UIStackView!
-    @IBOutlet weak var fundTypeLabel: UILabel!
-    @IBOutlet weak var fundNameLabel: UILabel!
     
     @IBOutlet weak var lastWeekNet: UILabel!
     @IBOutlet weak var lastMonthNet: UILabel!
@@ -34,14 +33,14 @@ class SecondaryViewController: UIViewController {
     
     func addUI() {
         fundChart = LineChartView()
-        view.addSubview(fundChart!)
+//        view.addSubview(fundChart!)
         
-        fundChart?.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(self.view).offset(12)
-            make.right.equalTo(self.view).offset(-12)
-            make.top.equalTo(self.view).offset(64)
-            make.height.equalTo(300)
-        }
+//        fundChart?.snp.makeConstraints { (make) -> Void in
+//            make.left.equalTo(self.view).offset(12)
+//            make.right.equalTo(self.view).offset(-12)
+//            make.top.equalTo(self.view).offset(64)
+//            make.height.equalTo(300)
+//        }
         
         for view in backStackView.subviews {
             if view.tag == 0 || view.tag == 1 || view.tag == 2 || view.tag == 3 || view.tag == 4 {
@@ -114,8 +113,6 @@ class SecondaryViewController: UIViewController {
     }
     
     func configData() {
-        fundNameLabel.text = detailModel?.fundDisplayName
-        fundTypeLabel.text = detailModel?.fundType
         lastWeekNet.text = detailModel?.lastWeekWorth
         lastMonthNet.text = detailModel?.lastMonthWorth
         lastThreeMonthNet.text = detailModel?.lastThreeWeekWorth
@@ -125,6 +122,12 @@ class SecondaryViewController: UIViewController {
         buyStart.text = detailModel?.buyStart
         
         configChart()
+    }
+    
+    func loadFundChart() {
+        if let imageData = try? Data(contentsOf: URL(string: "http://j4.dfcfw.com/charts/pic6/001404.png?_=1673860450")!) {
+            chartImage.image = UIImage.init(data: imageData)
+        }
     }
 }
 

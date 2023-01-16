@@ -23,7 +23,7 @@ class PrimaryTableViewController: UITableViewController {
     
     let cell_reuse = "fund_list_reuse_cell"
     var delegate: FundSelectionDelegate?
-    var selectedIndex: Int?
+    var selectedCode: String?
     var searchMode = false
     var selectedFundArray: Array<FundAllModel>? = Array<FundAllModel>()
     var searchFundArray: Array<FundAllModel>? = Array<FundAllModel>()
@@ -44,8 +44,8 @@ class PrimaryTableViewController: UITableViewController {
     func delegateNeedChange() {
         let savedCodeArray = Defaults[.fundCodeArray]
         if savedCodeArray.count > 0 {
-            if selectedIndex != nil {
-                delegate?.fundDidSelected(savedCodeArray[selectedIndex!])
+            if selectedCode != nil {
+                delegate?.fundDidSelected(selectedCode ?? "")
             }else{
                 delegate?.fundDidSelected(savedCodeArray[0])
             }
@@ -117,44 +117,39 @@ class PrimaryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath.row
-        delegateNeedChange()
+        let cell = tableView.cellForRow(at: indexPath) as! FundAllCell
+        if selectedCode != cell.dataModel?.fundCode {
+            selectedCode = cell.dataModel?.fundCode
+            delegateNeedChange()
+        } else {
+            return
+        }
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+//    // Override to support editing the table view.
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            // Delete the row from the data source
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }
+//    }
 
-    /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        
     }
-    */
 
-    /*
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
 
     /*
     // MARK: - Navigation
