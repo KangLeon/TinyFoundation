@@ -7,18 +7,36 @@
 
 import Foundation
 import UIKit
+import Defaults
 
 class FundAllCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var number: UILabel!
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var type: UILabel!
+    
+    var dataModel :FundAllModel?
+    var searchMode : Bool?
     
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func configData(model: FundAllModel!) {
+    @IBAction func addFundAction(_ sender: UIButton) {
+        saveDateToLocal()
+    }
+    
+    func saveDateToLocal() {
+        if let code = dataModel?.fundCode {
+            Defaults[.fundCodeArray] += [code]
+        }
+    }
+    
+    func configData(model: FundAllModel!, mode: Bool) {
+        searchMode = mode
+        addButton.isHidden = searchMode!
+        dataModel = model
         name.text = model.fundDisplayName
         number.text = model.fundCode
         type.text = model.fundType

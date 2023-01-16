@@ -83,9 +83,9 @@ extension FundListViewController: UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse, for: indexPath) as! FundAllCell
         
         if isSearchActive {
-            cell.configData(model: searchArray?[indexPath.row])
+            cell.configData(model: searchArray?[indexPath.row], mode: isSearchActive)
         }else{
-            cell.configData(model: dataArray?[indexPath.row])
+            cell.configData(model: dataArray?[indexPath.row], mode: isSearchActive)
         }
         
         return cell

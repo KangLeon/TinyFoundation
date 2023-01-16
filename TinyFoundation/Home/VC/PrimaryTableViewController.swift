@@ -124,9 +124,9 @@ class PrimaryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse, for: indexPath) as! FundAllCell
         
         if searchMode {
-            cell.configData(model: searchFundArray?[indexPath.row])
+            cell.configData(model: searchFundArray?[indexPath.row], mode: searchMode)
         }else{
-            cell.configData(model: selectedFundArray?[indexPath.row])
+            cell.configData(model: selectedFundArray?[indexPath.row], mode: searchMode)
         }
         
         
@@ -179,4 +179,35 @@ class PrimaryTableViewController: UITableViewController {
     }
     */
 
+}
+
+
+extension PrimaryTableViewController: UISearchBarDelegate {
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchMode = true
+        tableView.reloadData()
+        return true
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if !(searchBar.text?.isEmpty ?? false) {
+            searchGetData()
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        cancelSearch()
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        cancelSearch()
+        return true
+    }
+    
+    func cancelSearch() {
+        searchMode = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        tableView.reloadData()
+    }
 }
