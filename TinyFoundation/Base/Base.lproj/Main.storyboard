@@ -267,6 +267,9 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus.app" catalog="system" id="rUh-j7-O2l"/>
                     </navigationItem>
                     <size key="freeformSize" width="960" height="600"/>
+                    <connections>
+                        <outlet property="searchBar" destination="VHa-wP-ieV" id="cT9-8d-gKR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0d4-Wm-VMv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

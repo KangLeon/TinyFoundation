@@ -18,7 +18,8 @@ extension Defaults.Keys {
 }
 
 class PrimaryTableViewController: UITableViewController {
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     let cell_reuse = "fund_list_reuse_cell"
     var delegate: FundSelectionDelegate?
     var selectedIndex: Int?
@@ -76,23 +77,58 @@ class PrimaryTableViewController: UITableViewController {
             NVHudManager.sharedInstance.dismissProgress()
         }
     }
+    
+    func searchGetData() {
+        NVHudManager.sharedInstance.showProgress()
+        
+        HN.GET(url: HOST+fund_list_key,parameters: ["key_word":searchBar?.text ?? ""]).success { response in
+            print("response -->", response)
+            
+            let dict = response as? Dictionary<String,Any>
+            
+            self.searchFundArray?.removeAll()
+            
+            if dict != nil && ((dict?.keys.contains("data")) != nil){
+                if let array = dict!["data"] as? Array<Array<Any>> {
+                    for subArray in array {
+                        self.searchFundArray?.append(FundAllModel.init(array: subArray))
+                    }
+                }
+            }
+            
+            self.tableView.reloadData()
+            
+            NVHudManager.sharedInstance.dismissProgress()
+        }.failed { error in
+            print("error -->", error.code)
+            
+            NVHudManager.sharedInstance.dismissProgress()
+        }
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return selectedFundArray?.count ?? 0
+        if searchMode {
+            return searchFundArray?.count ?? 0
+        }else{
+            return selectedFundArray?.count ?? 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse, for: indexPath) as! FundAllCell
         
-        cell.configData(model: selectedFundArray?[indexPath.row])
+        if searchMode {
+            cell.configData(model: searchFundArray?[indexPath.row])
+        }else{
+            cell.configData(model: selectedFundArray?[indexPath.row])
+        }
+        
         
         return cell
     }
