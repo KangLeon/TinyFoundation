@@ -15,6 +15,7 @@ protocol FundSelectionDelegate: UIViewController {
 
 extension Defaults.Keys {
     static let fundCodeArray = Key<Array<String>>("fund_code_array", default: [])
+    static let fundModelArray = Key<Array<Dictionary<String, String>>>("fund_Model_array", default: [])
 }
 
 class PrimaryTableViewController: UITableViewController {
@@ -48,34 +49,13 @@ class PrimaryTableViewController: UITableViewController {
     }
     
     func requestGetAllFavorate() {
-        let savedCodeArray = Defaults[.fundCodeArray]
-        
-        NVHudManager.sharedInstance.showProgress()
-        let keyWords = savedCodeArray.joined(separator: ",")
-        
-        HN.GET(url: HOST+fund_list_key,parameters: ["key_word": keyWords]).success { response in
-            print("response -->", response)
-            
-            let dict = response as? Dictionary<String,Any>
-            
-            self.selectedFundArray?.removeAll()
-            
-            if dict != nil && ((dict?.keys.contains("data")) != nil){
-                if let array = dict!["data"] as? Array<Array<Any>> {
-                    for subArray in array {
-                        self.selectedFundArray?.append(FundAllModel.init(array: subArray))
-                    }
-                }
-            }
-            
-            self.tableView.reloadData()
-            
-            NVHudManager.sharedInstance.dismissProgress()
-        }.failed { error in
-            print("error -->", error.code)
-            
-            NVHudManager.sharedInstance.dismissProgress()
+        let savedModelArray = Defaults[.fundModelArray]
+        self.selectedFundArray?.removeAll()
+        for dict in savedModelArray {
+            let model = FundAllModel.init().configWithDict(dict: dict)
+            self.selectedFundArray?.append(model.configWithDict(dict: dict))
         }
+        self.tableView.reloadData()
     }
     
     func searchGetData() {
@@ -129,8 +109,11 @@ class PrimaryTableViewController: UITableViewController {
             cell.configData(model: selectedFundArray?[indexPath.row], mode: searchMode)
         }
         
-        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
 

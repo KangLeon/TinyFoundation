@@ -92,7 +92,6 @@ extension FundListViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //存储当前选中的数据到本地
         saveDateToLocal(index: indexPath.row)
         
         let delegate = UIApplication.shared.delegate as! AppDelegate

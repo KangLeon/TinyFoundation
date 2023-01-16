@@ -28,4 +28,14 @@ class FundAllModel: NSObject {
         fundType = array[3] as? String
         fundFullName = array[4] as? String
     }
+    
+    func configWithDict(dict: Dictionary<String, String>) -> FundAllModel{
+        fundCode = dict["fundCode"]
+        fundName = dict["fundName"]
+        fundDisplayName = dict["fundDisplayName"]
+        fundType = dict["fundType"]
+        fundFullName = dict["fundFullName"]
+        
+        return self
+    }
 }
