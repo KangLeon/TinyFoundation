@@ -22,6 +22,8 @@
 		2B3EE12B296FB7D70007C61B /* PrimaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EE12A296FB7D70007C61B /* PrimaryTableViewController.swift */; };
 		2B92B21C297107130088344D /* FundChartPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B92B21B297107130088344D /* FundChartPointModel.swift */; };
 		2BB8D89B297118CD00CBC22B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2BB8D89A297118CD00CBC22B /* SnapKit */; };
+		2BCC21C229753B7E004519A2 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 2BCC21C129753B7E004519A2 /* ProgressHUD */; };
+		2BCC21C429753FF4004519A2 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC21C329753FF4004519A2 /* Tools.swift */; };
 		59A75FAD25EE31FC0045177C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FAC25EE31FC0045177C /* AppDelegate.swift */; };
 		59A75FAF25EE31FC0045177C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A75FAE25EE31FC0045177C /* SceneDelegate.swift */; };
 		59A75FB425EE31FC0045177C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A75FB225EE31FC0045177C /* Main.storyboard */; };
@@ -84,6 +86,7 @@
 		2B3EE128296FB7610007C61B /* SupplementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementViewController.swift; sourceTree = "<group>"; };
 		2B3EE12A296FB7D70007C61B /* PrimaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTableViewController.swift; sourceTree = "<group>"; };
 		2B92B21B297107130088344D /* FundChartPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundChartPointModel.swift; sourceTree = "<group>"; };
+		2BCC21C329753FF4004519A2 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		37EF23736A00C4C2168BC335 /* Pods_TinyFoundation_TinyFoundationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyFoundation_TinyFoundationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7EE4ED79BE5591DEAEC55A /* Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig"; path = "Target Support Files/Pods-TinyFoundation-TinyFoundationUITests/Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		52BB1E063ADA7E2AE9F011ED /* Pods-TinyFoundationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundationTests.release.xcconfig"; path = "Target Support Files/Pods-TinyFoundationTests/Pods-TinyFoundationTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 				2B3EDCFF296EADD50007C61B /* Defaults in Frameworks */,
 				2BB8D89B297118CD00CBC22B /* SnapKit in Frameworks */,
 				2B3EDCF9296EAA890007C61B /* NVActivityIndicatorView in Frameworks */,
+				2BCC21C229753B7E004519A2 /* ProgressHUD in Frameworks */,
 				2B25D4A22970426B008B8FBC /* Charts in Frameworks */,
 				2B3EDCF6296EAA670007C61B /* ObjectMapper in Frameworks */,
 				AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */,
@@ -267,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				59E378E625F211DB00B8B7EB /* Constant.swift */,
+				2BCC21C329753FF4004519A2 /* Tools.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				2B3EDCFE296EADD50007C61B /* Defaults */,
 				2B25D4A12970426B008B8FBC /* Charts */,
 				2BB8D89A297118CD00CBC22B /* SnapKit */,
+				2BCC21C129753B7E004519A2 /* ProgressHUD */,
 			);
 			productName = TinyFoundation;
 			productReference = 59A75FA925EE31FC0045177C /* TinyFoundation.app */;
@@ -439,6 +445,7 @@
 				2B3EDCFD296EADD50007C61B /* XCRemoteSwiftPackageReference "Defaults" */,
 				2B25D4A02970426B008B8FBC /* XCRemoteSwiftPackageReference "Charts" */,
 				2BB8D899297118CD00CBC22B /* XCRemoteSwiftPackageReference "SnapKit" */,
+				2BCC21C029753B7E004519A2 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 			);
 			productRefGroup = 59A75FAA25EE31FC0045177C /* Products */;
 			projectDirPath = "";
@@ -573,6 +580,7 @@
 				59A75FAF25EE31FC0045177C /* SceneDelegate.swift in Sources */,
 				59E378FE25F21FC400B8B7EB /* FundAllCell.swift in Sources */,
 				59D3B16225F20D930073E289 /* HWAPI.swift in Sources */,
+				2BCC21C429753FF4004519A2 /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -969,6 +977,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		2BCC21C029753B7E004519A2 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1006,6 +1022,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2BB8D899297118CD00CBC22B /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		2BCC21C129753B7E004519A2 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BCC21C029753B7E004519A2 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
