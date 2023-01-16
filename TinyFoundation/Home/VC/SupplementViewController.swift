@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class SupplementViewController: UIViewController {
-    
     @IBOutlet weak var operationTableView: UITableView!
     
     var operationArray = ["买卖记录","加仓猛干！","大吉大利，今晚吃鸡！","交易通知"]
