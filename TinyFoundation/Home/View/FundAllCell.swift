@@ -45,6 +45,12 @@ class FundAllCell: UITableViewCell {
         name.text = model.fundDisplayName
         number.text = model.fundCode
         type.text = model.fundType
-        netValue.text = model.fundNet
+        if Double(model.fundNet) ?? 0 > 0 {
+            netValue.textColor = UIColor.red
+            netValue.text = "+\(model.fundNet)"
+        }else{
+            netValue.textColor = UIColor.green
+            netValue.text = "-\(model.fundNet)"
+        }
     }
 }
