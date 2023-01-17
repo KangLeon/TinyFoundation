@@ -2,7 +2,7 @@
 //  Tools.swift
 //  TinyFoundation
 //
-//  Created by Bytedance on 16/1/23.
+//  Created by JY on 16/1/23.
 //  Copyright © 2023 JY. All rights reserved.
 //
 

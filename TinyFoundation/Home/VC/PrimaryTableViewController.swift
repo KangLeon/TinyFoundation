@@ -39,6 +39,8 @@ class PrimaryTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         delegateNeedChange()
+        
+        requestCurrentNetValue()
     }
     
     func delegateNeedChange() {
@@ -87,6 +89,35 @@ class PrimaryTableViewController: UITableViewController {
             print("error -->", error.code)
             
             NVHudManager.sharedInstance.dismissProgress()
+        }
+    }
+    
+    func requestCurrentNetValue() {
+        let savedModelArray = Defaults[.fundCodeArray]
+        
+        let keywords = savedModelArray.joined(separator: ",")
+        
+        HN.GET(url: HOST+fund_summary,parameters: ["id": keywords]).success { response in
+            print("response -->", response)
+            
+            let dict = response as? Dictionary<String,Any>
+            
+            if dict != nil && ((dict?.keys.contains("data")) != nil){
+                if let array = dict!["data"] as? Array<Dictionary<String, Any>> {
+                    for dict in array {
+                        let fundCode = dict["code"] as? String
+                        if let index = self.selectedFundArray?.firstIndex(where: { model in
+                            model.fundCode == fundCode
+                        }) {
+                            self.selectedFundArray![index].fundNet = (dict["expectGrowth"] as? String)!
+                        }
+                    }
+                }
+            }
+            
+            self.tableView.reloadData()
+        }.failed { error in
+            print("error -->", error.code)
         }
     }
 

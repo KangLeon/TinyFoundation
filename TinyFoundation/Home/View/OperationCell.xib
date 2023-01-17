@@ -46,7 +46,7 @@
                 <outlet property="operationIcon" destination="Wpa-ur-5fX" id="sP8-N9-R4L"/>
                 <outlet property="operationNameLabel" destination="3lt-Iv-CXH" id="dfz-bW-Y1m"/>
             </connections>
-            <point key="canvasLocation" x="0.0" y="19.830508474576273"/>
+            <point key="canvasLocation" x="-14" y="-14"/>
         </tableViewCell>
     </objects>
 </document>

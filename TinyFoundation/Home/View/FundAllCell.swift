@@ -13,6 +13,7 @@ class FundAllCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var number: UILabel!
+    @IBOutlet weak var netValue: UILabel!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var type: UILabel!
     
@@ -44,5 +45,6 @@ class FundAllCell: UITableViewCell {
         name.text = model.fundDisplayName
         number.text = model.fundCode
         type.text = model.fundType
+        netValue.text = model.fundNet
     }
 }

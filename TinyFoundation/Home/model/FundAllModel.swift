@@ -15,6 +15,8 @@ class FundAllModel: NSObject {
     var fundType :String?
     var fundFullName :String?
     
+    var fundNet :String = "---"
+    
     override init() {
         super.init()
     }
