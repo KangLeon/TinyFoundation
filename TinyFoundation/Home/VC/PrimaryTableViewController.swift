@@ -34,13 +34,11 @@ class PrimaryTableViewController: UITableViewController {
         requestGetAllFavorate()
 
         self.tableView.register(UINib.init(nibName: "FundAllCell", bundle: nil), forCellReuseIdentifier: cell_reuse)
-        self.tableView.rowHeight = 60
+        self.tableView.rowHeight = 80
     }
     
     override func viewDidAppear(_ animated: Bool) {
         delegateNeedChange()
-        
-        requestCurrentNetValue()
     }
     
     func delegateNeedChange() {
@@ -62,6 +60,8 @@ class PrimaryTableViewController: UITableViewController {
             self.selectedFundArray?.append(model.configWithDict(dict: dict))
         }
         self.tableView.reloadData()
+        
+        requestCurrentNetValue()
     }
     
     func searchGetData() {
@@ -221,6 +221,6 @@ extension PrimaryTableViewController: UISearchBarDelegate {
         searchMode = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
-        tableView.reloadData()
+        requestGetAllFavorate()
     }
 }

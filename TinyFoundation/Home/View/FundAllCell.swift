@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Defaults
+import ProgressHUD
 
 class FundAllCell: UITableViewCell {
     
@@ -35,6 +36,9 @@ class FundAllCell: UITableViewCell {
         if let model = dataModel {
             let dict: [String: String] = ["fundCode": model.fundCode ?? "", "fundName": model.fundName ?? "", "fundDisplayName": model.fundDisplayName ?? "", "fundType": model.fundType ?? "", "fundFullName": model.fundFullName ?? ""]
             Defaults[.fundModelArray] += [dict]
+            ProgressHUD.showSucceed("添加收藏成功", interaction: false, delay: 1.5)
+        }else{
+            ProgressHUD.showFailed("添加收藏失败", interaction: false, delay: 1.5)
         }
     }
     
