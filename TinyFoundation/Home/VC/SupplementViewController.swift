@@ -12,8 +12,8 @@ import UIKit
 class SupplementViewController: UIViewController {
     @IBOutlet weak var operationTableView: UITableView!
     
-    var operationArray = ["买卖记录","加仓猛干！","大吉大利，今晚吃鸡！","交易通知"]
-    var operationIconArray = ["fund-operation", "fund-decrease", "fund-increase", "fund-notification"]
+    var operationArray = ["收益计算器","买卖记录","加仓猛干！","大吉大利，今晚吃鸡！","交易通知"]
+    var operationIconArray = ["fund-calculator", "fund-operation", "fund-decrease", "fund-increase", "fund-notification"]
     
     let cell_reuse_operation = "fund_operation_cell_reuse"
     
