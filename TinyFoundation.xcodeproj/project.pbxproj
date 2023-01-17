@@ -20,6 +20,8 @@
 		2B3EE125296FA9970007C61B /* SecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EE124296FA9970007C61B /* SecondaryViewController.swift */; };
 		2B3EE129296FB7610007C61B /* SupplementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EE128296FB7610007C61B /* SupplementViewController.swift */; };
 		2B3EE12B296FB7D70007C61B /* PrimaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EE12A296FB7D70007C61B /* PrimaryTableViewController.swift */; };
+		2B5503032976CDE800EDEC1C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5503012976CDE800EDEC1C /* CalculatorViewController.swift */; };
+		2B5503042976CDE800EDEC1C /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5503022976CDE800EDEC1C /* CalculatorViewController.xib */; };
 		2B92B21C297107130088344D /* FundChartPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B92B21B297107130088344D /* FundChartPointModel.swift */; };
 		2BB8D89B297118CD00CBC22B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2BB8D89A297118CD00CBC22B /* SnapKit */; };
 		2BCC21C229753B7E004519A2 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 2BCC21C129753B7E004519A2 /* ProgressHUD */; };
@@ -85,6 +87,8 @@
 		2B3EE124296FA9970007C61B /* SecondaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryViewController.swift; sourceTree = "<group>"; };
 		2B3EE128296FB7610007C61B /* SupplementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementViewController.swift; sourceTree = "<group>"; };
 		2B3EE12A296FB7D70007C61B /* PrimaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTableViewController.swift; sourceTree = "<group>"; };
+		2B5503012976CDE800EDEC1C /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		2B5503022976CDE800EDEC1C /* CalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
 		2B92B21B297107130088344D /* FundChartPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundChartPointModel.swift; sourceTree = "<group>"; };
 		2BCC21C329753FF4004519A2 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		37EF23736A00C4C2168BC335 /* Pods_TinyFoundation_TinyFoundationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyFoundation_TinyFoundationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +163,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B5502FE2976CDA300EDEC1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B5502FF2976CDB800EDEC1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B5503002976CDC100EDEC1C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				2B5503012976CDE800EDEC1C /* CalculatorViewController.swift */,
+				2B5503022976CDE800EDEC1C /* CalculatorViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		2BCC21C52976CA7D004519A2 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		2BCC21C62976CA97004519A2 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				2B5502FE2976CDA300EDEC1C /* Model */,
+				2B5502FF2976CDB800EDEC1C /* View */,
+				2B5503002976CDC100EDEC1C /* VC */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		2BCC21C72976CAB0004519A2 /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Buy;
+			sourceTree = "<group>";
+		};
+		2BCC21C82976CABC004519A2 /* Sale */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sale;
+			sourceTree = "<group>";
+		};
+		2BCC21C92976CAC7004519A2 /* Nootification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Nootification;
+			sourceTree = "<group>";
+		};
+		2BCC21CA2976CADB004519A2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		423429BEE2CB90E2507A403E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +272,12 @@
 				59A75FDF25EE32860045177C /* TinyFoundation.entitlements */,
 				59A75FEA25EE35850045177C /* Tool */,
 				59A75FE925EE357C0045177C /* Base */,
+				2BCC21C52976CA7D004519A2 /* Operations */,
+				2BCC21CA2976CADB004519A2 /* Settings */,
+				2BCC21C92976CAC7004519A2 /* Nootification */,
+				2BCC21C82976CABC004519A2 /* Sale */,
+				2BCC21C72976CAB0004519A2 /* Buy */,
+				2BCC21C62976CA97004519A2 /* Calculator */,
 				59E378EF25F2154900B8B7EB /* Home */,
 			);
 			path = TinyFoundation;
@@ -279,21 +357,21 @@
 		59E378EF25F2154900B8B7EB /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				59E3790225F220D900B8B7EB /* model */,
+				59E3790225F220D900B8B7EB /* Model */,
 				59E3790425F220E400B8B7EB /* View */,
 				59E3790325F220DD00B8B7EB /* VC */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		59E3790225F220D900B8B7EB /* model */ = {
+		59E3790225F220D900B8B7EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				59E3790525F220FC00B8B7EB /* FundAllModel.swift */,
 				2B25D49E296FF620008B8FBC /* FundDetailModel.swift */,
 				2B92B21B297107130088344D /* FundChartPointModel.swift */,
 			);
-			path = model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		59E3790325F220DD00B8B7EB /* VC */ = {
@@ -467,6 +545,7 @@
 				59A75FB625EE31FD0045177C /* Assets.xcassets in Resources */,
 				59E378F925F21F0600B8B7EB /* FundAllCell.xib in Resources */,
 				59A75FB425EE31FC0045177C /* Main.storyboard in Resources */,
+				2B5503042976CDE800EDEC1C /* CalculatorViewController.xib in Resources */,
 				2B25D49D296FEF1D008B8FBC /* OperationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +659,7 @@
 				59A75FAF25EE31FC0045177C /* SceneDelegate.swift in Sources */,
 				59E378FE25F21FC400B8B7EB /* FundAllCell.swift in Sources */,
 				59D3B16225F20D930073E289 /* HWAPI.swift in Sources */,
+				2B5503032976CDE800EDEC1C /* CalculatorViewController.swift in Sources */,
 				2BCC21C429753FF4004519A2 /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

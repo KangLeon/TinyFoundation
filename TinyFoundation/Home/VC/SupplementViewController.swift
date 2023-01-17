@@ -12,8 +12,8 @@ import UIKit
 class SupplementViewController: UIViewController {
     @IBOutlet weak var operationTableView: UITableView!
     
-    var operationArray = ["收益计算器","买卖记录","加仓猛干！","大吉大利，今晚吃鸡！","交易通知"]
-    var operationIconArray = ["fund-calculator", "fund-operation", "fund-decrease", "fund-increase", "fund-notification"]
+    var operationArray = ["净值走势","收益计算器","买卖记录","加仓猛干！","大吉大利，今晚吃鸡！","交易通知"]
+    var operationIconArray = ["fund-live", "fund-calculator", "fund-operation", "fund-decrease", "fund-increase", "fund-notification"]
     
     let cell_reuse_operation = "fund_operation_cell_reuse"
     
@@ -66,5 +66,28 @@ extension SupplementViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configData(name: operationArray[indexPath.row], icon: operationIconArray[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        guard
+            let splitViewController = delegate.keyWindows()?.rootViewController as? UISplitViewController,
+          let secondaryNav = splitViewController.viewControllers[2] as? UINavigationController
+          else { fatalError() }
+        if indexPath.row == 0 {
+            
+        }else if indexPath.row == 1 {
+            secondaryNav.popViewController(animated: false)
+            let calculatorVC = CalculatorViewController(nibName: "CalculatorViewController", bundle: nil)
+            secondaryNav.pushViewController(calculatorVC, animated: false)
+        }else if indexPath.row == 2 {
+            
+        }else if indexPath.row == 3 {
+            
+        }else if indexPath.row == 4 {
+            
+        }else if indexPath.row == 5 {
+            
+        }
     }
 }
