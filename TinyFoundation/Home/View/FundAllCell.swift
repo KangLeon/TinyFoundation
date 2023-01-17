@@ -53,7 +53,7 @@ class FundAllCell: UITableViewCell {
             netValue.textColor = UIColor.red
             netValue.text = "+\(model.fundNet)"
         }else{
-            netValue.textColor = UIColor.green
+            netValue.textColor = UIColor.systemGreen
             netValue.text = "-\(model.fundNet)"
         }
     }

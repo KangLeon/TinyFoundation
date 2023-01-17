@@ -26,7 +26,19 @@ class PrimaryTableViewController: UITableViewController {
     let cell_reuse = "fund_list_reuse_cell"
     var delegate: FundSelectionDelegate?
     var selectedCode: String?
-    var searchMode = false
+    var searchMode: Bool = false {
+            willSet(newValue) {
+                print("searchMode will change to \(newValue)")
+            }
+            didSet(newValue) {
+                if #available(macCatalyst 16.0, *) {
+                    deleteButton.isHidden = !newValue
+                } else {
+                    // Fallback on earlier versions
+                    deleteButton.isEnabled = !newValue
+                }
+            }
+        }
     var selectedFundArray: Array<FundAllModel>? = Array<FundAllModel>()
     var searchFundArray: Array<FundAllModel>? = Array<FundAllModel>()
     
@@ -40,11 +52,18 @@ class PrimaryTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+//        var savedCodeArray = Defaults[.fundCodeArray]
+//        savedCodeArray.remove(at: 0)
+//        var savedModelArray = Defaults[.fundModelArray]
+//        savedModelArray.remove(at: 0)
+//        Defaults[.fundModelArray] = savedModelArray
+//        Defaults[.fundCodeArray] = savedCodeArray
         delegateNeedChange()
     }
     
     func delegateNeedChange() {
         let savedCodeArray = Defaults[.fundCodeArray]
+        let _ = Defaults[.fundModelArray]
         if savedCodeArray.count > 0 {
             if selectedCode != nil {
                 delegate?.fundDidSelected(selectedCode ?? "")
@@ -195,24 +214,31 @@ class PrimaryTableViewController: UITableViewController {
     */
     
     func deleteRowAtIndexPath(indexPath: IndexPath) {
-        tableView.deleteRows(at: [indexPath], with: .fade)
         var savedCodeArray = Defaults[.fundCodeArray]
+        tableView.beginUpdates()
         if savedCodeArray.count > 0 {
             let cell = tableView.cellForRow(at: indexPath) as! FundAllCell
-            if selectedCode != cell.dataModel?.fundCode {
-                if let index = savedCodeArray.firstIndex(where: { code in
-                    code == selectedCode
-                }) {
-                    savedCodeArray.remove(at: index)
-                    var savedModelArray = Defaults[.fundModelArray]
-                    savedModelArray.remove(at: index)
-                    Defaults[.fundModelArray] = savedModelArray
-                    Defaults[.fundCodeArray] = savedCodeArray
-                }
-            } else {
-                return
+            let index = savedCodeArray.firstIndex(where: { code in
+                code == cell.dataModel?.fundCode
+            })
+            if let indeX = index {
+                savedCodeArray.remove(at: indeX)
+                var savedModelArray = Defaults[.fundModelArray]
+                savedModelArray.remove(at: indeX)
+                Defaults[.fundModelArray] = savedModelArray
+                Defaults[.fundCodeArray] = savedCodeArray
+                selectedFundArray?.remove(at: indeX)
+                tableView.deleteRows(at: [indexPath], with: .fade)
             }
         }
+        tableView.endUpdates()
+        if savedCodeArray.count == 0 {
+            tableView.isEditing = false
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "取消跟踪"
     }
 
     @IBAction func deleteFundAction(_ sender: UIBarButtonItem) {
@@ -247,6 +273,7 @@ extension PrimaryTableViewController: UISearchBarDelegate {
         searchMode = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
+        searchFundArray?.removeAll()
         requestGetAllFavorate()
     }
 }
