@@ -250,7 +250,11 @@
                     <navigationItem key="navigationItem" title="跟踪的基金" id="p8l-lz-kFu">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="gear" catalog="system" id="m69-Ar-FlU"/>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="plus.app" catalog="system" id="rUh-j7-O2l"/>
+                            <barButtonItem title="Item" image="plus.app" catalog="system" id="rUh-j7-O2l">
+                                <connections>
+                                    <action selector="addFundAction:" destination="LOO-DU-ecg" id="faF-Ae-88b"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="Item" image="delete.left.fill" catalog="system" id="sff-cs-hY4">
                                 <connections>
                                     <action selector="deleteFundAction:" destination="LOO-DU-ecg" id="tyU-Z8-GUu"/>
@@ -260,6 +264,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="960" height="600"/>
                     <connections>
+                        <outlet property="addButton" destination="rUh-j7-O2l" id="qIU-ja-CLh"/>
                         <outlet property="deleteButton" destination="sff-cs-hY4" id="GGd-rI-3kd"/>
                         <outlet property="searchBar" destination="VHa-wP-ieV" id="cT9-8d-gKR"/>
                     </connections>

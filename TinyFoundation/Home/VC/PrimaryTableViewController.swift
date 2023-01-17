@@ -23,6 +23,7 @@ class PrimaryTableViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     
+    @IBOutlet weak var addButton: UIBarButtonItem!
     let cell_reuse = "fund_list_reuse_cell"
     var delegate: FundSelectionDelegate?
     var selectedCode: String?
@@ -241,6 +242,13 @@ class PrimaryTableViewController: UITableViewController {
         return "取消跟踪"
     }
 
+    @IBAction func addFundAction(_ sender: Any) {
+        if !searchMode {
+            searchBar.becomeFirstResponder()
+        }else{
+            cancelSearch()
+        }
+    }
     @IBAction func deleteFundAction(_ sender: UIBarButtonItem) {
         tableView.isEditing = !tableView.isEditing
     }
