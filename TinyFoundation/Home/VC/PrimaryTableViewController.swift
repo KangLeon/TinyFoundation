@@ -19,7 +19,9 @@ extension Defaults.Keys {
 }
 
 class PrimaryTableViewController: UITableViewController {
+    
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
     
     let cell_reuse = "fund_list_reuse_cell"
     var delegate: FundSelectionDelegate?
@@ -157,19 +159,19 @@ class PrimaryTableViewController: UITableViewController {
         }
     }
     
-//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 
-//    // Override to support editing the table view.
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            // Delete the row from the data source
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        }
-//    }
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            deleteRowAtIndexPath(indexPath: indexPath)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
 
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -191,7 +193,31 @@ class PrimaryTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func deleteRowAtIndexPath(indexPath: IndexPath) {
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        var savedCodeArray = Defaults[.fundCodeArray]
+        if savedCodeArray.count > 0 {
+            let cell = tableView.cellForRow(at: indexPath) as! FundAllCell
+            if selectedCode != cell.dataModel?.fundCode {
+                if let index = savedCodeArray.firstIndex(where: { code in
+                    code == selectedCode
+                }) {
+                    savedCodeArray.remove(at: index)
+                    var savedModelArray = Defaults[.fundModelArray]
+                    savedModelArray.remove(at: index)
+                    Defaults[.fundModelArray] = savedModelArray
+                    Defaults[.fundCodeArray] = savedCodeArray
+                }
+            } else {
+                return
+            }
+        }
+    }
 
+    @IBAction func deleteFundAction(_ sender: UIBarButtonItem) {
+        tableView.isEditing = !tableView.isEditing
+    }
 }
 
 
