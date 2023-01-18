@@ -12,7 +12,7 @@ import UIKit
 class SupplementViewController: UIViewController {
     @IBOutlet weak var operationTableView: UITableView!
     
-    var operationArray = ["净值走势","收益计算器","买卖记录","加仓猛干！","大吉大利，今晚吃鸡！","交易通知"]
+    var operationArray = ["净值走势","收益计算器","买卖记录","加仓","减仓","交易通知"]
     var operationIconArray = ["fund-live", "fund-calculator", "fund-operation", "fund-decrease", "fund-increase", "fund-notification"]
     
     let cell_reuse_operation = "fund_operation_cell_reuse"
@@ -69,13 +69,9 @@ extension SupplementViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        guard
-            let splitViewController = delegate.keyWindows()?.rootViewController as? UISplitViewController,
-          let secondaryNav = splitViewController.viewControllers[2] as? UINavigationController
-          else { fatalError() }
+        let secondaryNav = getSecondaryNavViewController()
         if indexPath.row == 0 {
-            
+            secondaryNav.popViewController(animated: false)
         }else if indexPath.row == 1 {
             secondaryNav.popViewController(animated: false)
             let calculatorVC = CalculatorViewController(nibName: "CalculatorViewController", bundle: nil)

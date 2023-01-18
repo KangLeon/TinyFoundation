@@ -27,6 +27,7 @@ class PrimaryTableViewController: UITableViewController {
     let cell_reuse = "fund_list_reuse_cell"
     var delegate: FundSelectionDelegate?
     var selectedCode: String?
+    var selectedIndex: Int?
     var searchMode: Bool = false {
             willSet(newValue) {
                 print("searchMode will change to \(newValue)")
@@ -138,6 +139,7 @@ class PrimaryTableViewController: UITableViewController {
             }
             
             self.tableView.reloadData()
+            self.tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .top)
         }.failed { error in
             print("error -->", error.code)
         }
@@ -171,6 +173,7 @@ class PrimaryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! FundAllCell
+        selectedIndex = indexPath.row
         if selectedCode != cell.dataModel?.fundCode {
             selectedCode = cell.dataModel?.fundCode
             delegateNeedChange()

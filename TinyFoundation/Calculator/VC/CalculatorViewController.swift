@@ -9,22 +9,17 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
-
+    @IBOutlet weak var buyNetValue: UITextField!
+    @IBOutlet weak var buyCounts: UITextField!
+    @IBOutlet weak var buyFee: UITextField!
+    @IBOutlet weak var saleNetValue: UITextField!
+    @IBOutlet weak var saleCounts: UITextField!
+    @IBOutlet weak var saleFee: UITextField!
+    @IBOutlet weak var earnMoney: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
