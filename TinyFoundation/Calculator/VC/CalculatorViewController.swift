@@ -28,4 +28,19 @@ extension CalculatorViewController: UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         return true
     }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        calculateEarnMoney()
+    }
+    
+    func calculateEarnMoney() {
+        let buyNet = buyNetValue.text
+        let buycounts = buyCounts.text
+        let buyFee = buyFee.text
+        let saleNet = saleNetValue.text
+        let saleCount = saleCounts.text
+        let saleFe = saleFee.text
+        
+        if buyNet?.count > 0 && buycounts?.count > 0 && 
+        earnLabel.text = "1949.5"
+    }
 }
