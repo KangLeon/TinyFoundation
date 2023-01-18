@@ -15,11 +15,17 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var saleNetValue: UITextField!
     @IBOutlet weak var saleCounts: UITextField!
     @IBOutlet weak var saleFee: UITextField!
-    @IBOutlet weak var earnMoney: UITextField!
     
+    @IBOutlet weak var earnLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+}
+
+extension CalculatorViewController: UITextFieldDelegate {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
     }
 }

@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard
           let splitViewController = window?.rootViewController as? UISplitViewController,
           let primaryViewController = (splitViewController.viewControllers[0] as? UINavigationController)?.topViewController as? PrimaryTableViewController,
-          let suppleMentViewController = (splitViewController.viewControllers[1] as? UINavigationController)?.topViewController as? SupplementViewController,
+          let _ = (splitViewController.viewControllers[1] as? UINavigationController)?.topViewController as? SupplementViewController,
           let secondaryViewController = (splitViewController.viewControllers[2] as? UINavigationController)?.topViewController as? SecondaryViewController
           else { fatalError() }
 

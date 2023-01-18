@@ -232,16 +232,6 @@
                                 <outlet property="delegate" destination="LOO-DU-ecg" id="CxQ-Uy-Qae"/>
                             </connections>
                         </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="reuseIdentifier" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Psl-Xv-ZO3">
-                                <rect key="frame" x="12.987012987012974" y="77" width="934.02597402597394" height="45"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Psl-Xv-ZO3" id="LkN-tv-tbW">
-                                    <rect key="frame" x="0.0" y="0.0" width="934.02597402597405" height="45"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="LOO-DU-ecg" id="day-H8-Nyb"/>
                             <outlet property="delegate" destination="LOO-DU-ecg" id="rEP-Ft-4nG"/>
