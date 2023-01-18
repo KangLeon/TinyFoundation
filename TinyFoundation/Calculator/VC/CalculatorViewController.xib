@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -183,18 +184,37 @@
                         <constraint firstAttribute="height" constant="492" id="vmP-ea-QWc"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzP-vu-8v9">
+                    <rect key="frame" x="12" y="552" width="59" height="35"/>
+                    <color key="backgroundColor" name="AccentColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="nug-2P-0se"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="计算">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="calculateAction:" destination="-1" eventType="touchUpInside" id="1UO-ZS-Gtc"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="CzP-vu-8v9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="4bb-GP-RrC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tOI-FW-B0H" secondAttribute="trailing" constant="12" id="5E0-rf-55T"/>
                 <constraint firstItem="tOI-FW-B0H" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="48" id="Ekj-zk-5U6"/>
                 <constraint firstItem="tOI-FW-B0H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="KJ5-dL-qkz"/>
+                <constraint firstItem="CzP-vu-8v9" firstAttribute="top" secondItem="tOI-FW-B0H" secondAttribute="bottom" constant="12" id="j4F-kJ-Tgg"/>
             </constraints>
             <point key="canvasLocation" x="9" y="20"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

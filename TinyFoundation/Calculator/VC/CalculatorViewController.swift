@@ -22,25 +22,46 @@ class CalculatorViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func calculateAction(_ sender: Any) {
+        calculateEarnMoney()
+    }
+    
+    func calculateEarnMoney() {
+        buyNetValue.resignFirstResponder()
+        buyCounts.resignFirstResponder()
+        buyFee.resignFirstResponder()
+        saleNetValue.resignFirstResponder()
+        saleCounts.resignFirstResponder()
+        saleFee.resignFirstResponder()
+        
+        let buyNet = buyNetValue.text
+        let buycounts = buyCounts.text
+        let buyFee = buyFee.text
+        let saleNet = saleNetValue.text
+        let saleCounts = saleCounts.text
+        let saleFee = saleFee.text
+        
+        let buyNetValue = Double(buyNet ?? "0") ?? 0
+        let buyCountsValue = Double(buycounts ?? "0") ?? 0
+        let buyFeeValue = Double(buyFee ?? "0") ?? 0
+        let saleNetValue = Double(saleNet ?? "0") ?? 0
+        let saleCountsValue = Double(saleCounts ?? "0") ?? 0
+        let saleFeeValue = Double(saleFee ?? "0") ?? 0
+         
+        if buyNet!.count > 0 && buycounts!.count > 0 && buyFee!.count > 0 && saleNet!.count > 0 && saleCounts!.count > 0 && saleFee!.count > 0 {
+            let saleMoney = saleNetValue * saleCountsValue - saleFeeValue
+            let buyMoney = buyNetValue * buyCountsValue - buyFeeValue
+            let earnValue = saleMoney - buyMoney
+            earnLabel.text = "\(earnValue)"
+        }else {
+            earnLabel.text = "无法计算收益，请补充更多信息"
+        }
+    }
 }
 
 extension CalculatorViewController: UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         return true
     }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        calculateEarnMoney()
-    }
     
-    func calculateEarnMoney() {
-        let buyNet = buyNetValue.text
-        let buycounts = buyCounts.text
-        let buyFee = buyFee.text
-        let saleNet = saleNetValue.text
-        let saleCount = saleCounts.text
-        let saleFe = saleFee.text
-        
-        if buyNet?.count > 0 && buycounts?.count > 0 && 
-        earnLabel.text = "1949.5"
-    }
 }
