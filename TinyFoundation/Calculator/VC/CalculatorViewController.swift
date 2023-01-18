@@ -17,13 +17,19 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var saleFee: UITextField!
     
     @IBOutlet weak var earnLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func calculateAction(_ sender: Any) {
         calculateEarnMoney()
+    }
+    @IBAction func saveOperation(_ sender: Any) {
+        
     }
     
     func calculateEarnMoney() {
@@ -63,5 +69,4 @@ extension CalculatorViewController: UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         return true
     }
-    
 }

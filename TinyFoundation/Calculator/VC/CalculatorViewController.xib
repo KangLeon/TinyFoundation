@@ -19,6 +19,7 @@
                 <outlet property="saleCounts" destination="Ku8-SE-SOg" id="xs3-zI-Od6"/>
                 <outlet property="saleFee" destination="F7d-Sl-Kmq" id="oz1-yU-a1X"/>
                 <outlet property="saleNetValue" destination="DQh-Nl-bU4" id="aW9-wM-gbj"/>
+                <outlet property="saveButton" destination="1hv-aX-1up" id="z0C-mK-Tj9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="4zo-8l-oFE"/>
             </connections>
         </placeholder>
@@ -198,6 +199,20 @@
                         <action selector="calculateAction:" destination="-1" eventType="touchUpInside" id="1UO-ZS-Gtc"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hv-aX-1up">
+                    <rect key="frame" x="83" y="552" width="76" height="35"/>
+                    <color key="backgroundColor" name="AccentColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="IrM-LT-uoG"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="记一笔">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="saveOperation:" destination="-1" eventType="touchUpInside" id="eBp-Z7-Pay"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -207,6 +222,8 @@
                 <constraint firstItem="tOI-FW-B0H" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="48" id="Ekj-zk-5U6"/>
                 <constraint firstItem="tOI-FW-B0H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="KJ5-dL-qkz"/>
                 <constraint firstItem="CzP-vu-8v9" firstAttribute="top" secondItem="tOI-FW-B0H" secondAttribute="bottom" constant="12" id="j4F-kJ-Tgg"/>
+                <constraint firstItem="1hv-aX-1up" firstAttribute="top" secondItem="tOI-FW-B0H" secondAttribute="bottom" constant="12" id="jm8-ah-E6Y"/>
+                <constraint firstItem="1hv-aX-1up" firstAttribute="leading" secondItem="CzP-vu-8v9" secondAttribute="trailing" constant="12" id="pKn-ia-FEe"/>
             </constraints>
             <point key="canvasLocation" x="9" y="20"/>
         </view>
