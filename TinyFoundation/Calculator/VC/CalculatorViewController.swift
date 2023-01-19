@@ -38,7 +38,7 @@ class CalculatorViewController: UIViewController {
     }
     @IBAction func saveOperation(_ sender: Any) {
         calculateEarnMoney()
-        ProgressHUD.showSucceed("记录交易成功", interaction: false, delay: 1.5)
+        saveToData()
     }
     
     func bindSignal() {
@@ -85,6 +85,12 @@ class CalculatorViewController: UIViewController {
             earnLabel.text = "无法计算收益，请补充更多信息"
             isCalculate = false
         }
+    }
+    
+    func saveToData() {
+        
+        
+        ProgressHUD.showSucceed("记录交易成功", interaction: false, delay: 1.5)
     }
 }
 

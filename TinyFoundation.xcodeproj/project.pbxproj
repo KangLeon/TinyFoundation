@@ -27,6 +27,8 @@
 		2B5503032976CDE800EDEC1C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5503012976CDE800EDEC1C /* CalculatorViewController.swift */; };
 		2B5503042976CDE800EDEC1C /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5503022976CDE800EDEC1C /* CalculatorViewController.xib */; };
 		2B92B21C297107130088344D /* FundChartPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B92B21B297107130088344D /* FundChartPointModel.swift */; };
+		2BADFFC5297916CD000A9DC5 /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFFC3297916CD000A9DC5 /* OperationViewController.swift */; };
+		2BADFFC6297916CD000A9DC5 /* OperationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BADFFC4297916CD000A9DC5 /* OperationViewController.xib */; };
 		2BB8D89B297118CD00CBC22B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2BB8D89A297118CD00CBC22B /* SnapKit */; };
 		2BCC21C229753B7E004519A2 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 2BCC21C129753B7E004519A2 /* ProgressHUD */; };
 		2BCC21C429753FF4004519A2 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC21C329753FF4004519A2 /* Tools.swift */; };
@@ -94,6 +96,8 @@
 		2B5503012976CDE800EDEC1C /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		2B5503022976CDE800EDEC1C /* CalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
 		2B92B21B297107130088344D /* FundChartPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundChartPointModel.swift; sourceTree = "<group>"; };
+		2BADFFC3297916CD000A9DC5 /* OperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
+		2BADFFC4297916CD000A9DC5 /* OperationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OperationViewController.xib; sourceTree = "<group>"; };
 		2BCC21C329753FF4004519A2 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		37EF23736A00C4C2168BC335 /* Pods_TinyFoundation_TinyFoundationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyFoundation_TinyFoundationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7EE4ED79BE5591DEAEC55A /* Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig"; path = "Target Support Files/Pods-TinyFoundation-TinyFoundationUITests/Pods-TinyFoundation-TinyFoundationUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -194,9 +198,35 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		2BADFFC02979169C000A9DC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2BADFFC1297916A3000A9DC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BADFFC2297916A9000A9DC5 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				2BADFFC3297916CD000A9DC5 /* OperationViewController.swift */,
+				2BADFFC4297916CD000A9DC5 /* OperationViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		2BCC21C52976CA7D004519A2 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				2BADFFC02979169C000A9DC5 /* Model */,
+				2BADFFC1297916A3000A9DC5 /* View */,
+				2BADFFC2297916A9000A9DC5 /* VC */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -225,11 +255,11 @@
 			path = Sale;
 			sourceTree = "<group>";
 		};
-		2BCC21C92976CAC7004519A2 /* Nootification */ = {
+		2BCC21C92976CAC7004519A2 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Nootification;
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		2BCC21CA2976CADB004519A2 /* Settings */ = {
@@ -282,7 +312,7 @@
 				59A75FE925EE357C0045177C /* Base */,
 				2BCC21C52976CA7D004519A2 /* Operations */,
 				2BCC21CA2976CADB004519A2 /* Settings */,
-				2BCC21C92976CAC7004519A2 /* Nootification */,
+				2BCC21C92976CAC7004519A2 /* Notification */,
 				2BCC21C82976CABC004519A2 /* Sale */,
 				2BCC21C72976CAB0004519A2 /* Buy */,
 				2BCC21C62976CA97004519A2 /* Calculator */,
@@ -555,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59A75FB925EE31FD0045177C /* LaunchScreen.storyboard in Resources */,
+				2BADFFC6297916CD000A9DC5 /* OperationViewController.xib in Resources */,
 				59A75FB625EE31FD0045177C /* Assets.xcassets in Resources */,
 				59E378F925F21F0600B8B7EB /* FundAllCell.xib in Resources */,
 				59A75FB425EE31FC0045177C /* Main.storyboard in Resources */,
@@ -653,6 +684,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BADFFC5297916CD000A9DC5 /* OperationViewController.swift in Sources */,
 				59D3B16125F20D930073E289 /* HWNetworkingOC.swift in Sources */,
 				59D3B14F25F1FF250073E289 /* AlamofireManager.swift in Sources */,
 				59D3B16525F20D930073E289 /* HWNetworking.swift in Sources */,

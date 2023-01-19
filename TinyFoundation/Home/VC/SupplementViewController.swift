@@ -70,14 +70,14 @@ extension SupplementViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let secondaryNav = getSecondaryNavViewController()
+        secondaryNav.popViewController(animated: false)
         if indexPath.row == 0 {
-            secondaryNav.popViewController(animated: false)
         }else if indexPath.row == 1 {
-            secondaryNav.popViewController(animated: false)
             let calculatorVC = CalculatorViewController(nibName: "CalculatorViewController", bundle: nil)
             secondaryNav.pushViewController(calculatorVC, animated: false)
         }else if indexPath.row == 2 {
-            
+            let operationVC = CalculatorViewController(nibName: "OperationViewController", bundle: nil)
+            secondaryNav.pushViewController(operationVC, animated: false)
         }else if indexPath.row == 3 {
             
         }else if indexPath.row == 4 {
