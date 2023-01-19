@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import ProgressHUD
 
 class CalculatorViewController: UIViewController {
     @IBOutlet weak var buyNetValue: UITextField!
@@ -19,17 +22,35 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var earnLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     
+    let disposeBag = DisposeBag()
+    
+    var isCalculate = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        bindSignal()
     }
     
     @IBAction func calculateAction(_ sender: Any) {
         calculateEarnMoney()
     }
     @IBAction func saveOperation(_ sender: Any) {
-        
+        calculateEarnMoney()
+        ProgressHUD.showSucceed("记录交易成功", interaction: false, delay: 1.5)
+    }
+    
+    func bindSignal() {
+        Observable.combineLatest(buyNetValue.rx.text.orEmpty, buyCounts.rx.text.orEmpty, buyFee.rx.text.orEmpty, saleNetValue.rx.text.orEmpty, saleCounts.rx.text.orEmpty, saleFee.rx.text.orEmpty) { textValue1, textValue2, textValue3, textValue4, textValue5, textValue6 -> String in
+            let name = "name"
+            if textValue1.count > 0 && textValue2.count > 0 && textValue3.count > 0 && textValue4.count > 0 && textValue5.count > 0 && textValue6.count > 0 {
+                self.saveButton.isEnabled = true
+            }else{
+                self.saveButton.isEnabled = false
+            }
+            return name
+        }.subscribe(onDisposed: nil).disposed(by: disposeBag)
     }
     
     func calculateEarnMoney() {
@@ -53,14 +74,16 @@ class CalculatorViewController: UIViewController {
         let saleNetValue = Double(saleNet ?? "0") ?? 0
         let saleCountsValue = Double(saleCounts ?? "0") ?? 0
         let saleFeeValue = Double(saleFee ?? "0") ?? 0
-         
+        
         if buyNet!.count > 0 && buycounts!.count > 0 && buyFee!.count > 0 && saleNet!.count > 0 && saleCounts!.count > 0 && saleFee!.count > 0 {
             let saleMoney = saleNetValue * saleCountsValue - saleFeeValue
             let buyMoney = buyNetValue * buyCountsValue - buyFeeValue
             let earnValue = saleMoney - buyMoney
             earnLabel.text = "\(earnValue)"
+            isCalculate = true
         }else {
             earnLabel.text = "无法计算收益，请补充更多信息"
+            isCalculate = false
         }
     }
 }

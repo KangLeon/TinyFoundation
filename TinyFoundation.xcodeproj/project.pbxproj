@@ -20,6 +20,10 @@
 		2B3EE125296FA9970007C61B /* SecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EE124296FA9970007C61B /* SecondaryViewController.swift */; };
 		2B3EE129296FB7610007C61B /* SupplementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EE128296FB7610007C61B /* SupplementViewController.swift */; };
 		2B3EE12B296FB7D70007C61B /* PrimaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EE12A296FB7D70007C61B /* PrimaryTableViewController.swift */; };
+		2B54926B2978E85500B82955 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 2B54926A2978E85500B82955 /* RxBlocking */; };
+		2B54926D2978E85500B82955 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2B54926C2978E85500B82955 /* RxCocoa */; };
+		2B54926F2978E85500B82955 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2B54926E2978E85500B82955 /* RxRelay */; };
+		2B5492712978E85500B82955 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2B5492702978E85500B82955 /* RxSwift */; };
 		2B5503032976CDE800EDEC1C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5503012976CDE800EDEC1C /* CalculatorViewController.swift */; };
 		2B5503042976CDE800EDEC1C /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5503022976CDE800EDEC1C /* CalculatorViewController.xib */; };
 		2B92B21C297107130088344D /* FundChartPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B92B21B297107130088344D /* FundChartPointModel.swift */; };
@@ -134,13 +138,17 @@
 			files = (
 				2B3EDCFF296EADD50007C61B /* Defaults in Frameworks */,
 				2BB8D89B297118CD00CBC22B /* SnapKit in Frameworks */,
+				2B54926D2978E85500B82955 /* RxCocoa in Frameworks */,
 				2B3EDCF9296EAA890007C61B /* NVActivityIndicatorView in Frameworks */,
 				2BCC21C229753B7E004519A2 /* ProgressHUD in Frameworks */,
 				2B25D4A22970426B008B8FBC /* Charts in Frameworks */,
+				2B5492712978E85500B82955 /* RxSwift in Frameworks */,
+				2B54926F2978E85500B82955 /* RxRelay in Frameworks */,
 				2B3EDCF6296EAA670007C61B /* ObjectMapper in Frameworks */,
 				AFE8CB041FDA1061E76E2A19 /* Pods_TinyFoundation.framework in Frameworks */,
 				2B3EDCF3296EAA240007C61B /* Alamofire in Frameworks */,
 				2B3EDCFB296EAA890007C61B /* NVActivityIndicatorViewExtended in Frameworks */,
+				2B54926B2978E85500B82955 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +449,10 @@
 				2B25D4A12970426B008B8FBC /* Charts */,
 				2BB8D89A297118CD00CBC22B /* SnapKit */,
 				2BCC21C129753B7E004519A2 /* ProgressHUD */,
+				2B54926A2978E85500B82955 /* RxBlocking */,
+				2B54926C2978E85500B82955 /* RxCocoa */,
+				2B54926E2978E85500B82955 /* RxRelay */,
+				2B5492702978E85500B82955 /* RxSwift */,
 			);
 			productName = TinyFoundation;
 			productReference = 59A75FA925EE31FC0045177C /* TinyFoundation.app */;
@@ -524,6 +536,7 @@
 				2B25D4A02970426B008B8FBC /* XCRemoteSwiftPackageReference "Charts" */,
 				2BB8D899297118CD00CBC22B /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2BCC21C029753B7E004519A2 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+				2B5492692978E85500B82955 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 59A75FAA25EE31FC0045177C /* Products */;
 			projectDirPath = "";
@@ -1049,6 +1062,14 @@
 				kind = branch;
 			};
 		};
+		2B5492692978E85500B82955 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		2BB8D899297118CD00CBC22B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1097,6 +1118,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2B3EDCFD296EADD50007C61B /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
+		};
+		2B54926A2978E85500B82955 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B5492692978E85500B82955 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		2B54926C2978E85500B82955 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B5492692978E85500B82955 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		2B54926E2978E85500B82955 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B5492692978E85500B82955 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		2B5492702978E85500B82955 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B5492692978E85500B82955 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 		2BB8D89A297118CD00CBC22B /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
